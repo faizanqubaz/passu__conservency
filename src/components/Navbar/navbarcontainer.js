@@ -3,9 +3,14 @@ import './navbarcontainer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/logo.png';
+import passuA from '../assets/passu.jpg';
+// Import additional images
+import imageA1 from '../assets/passu.jpg';
+import imageA2 from '../assets/passu.jpg';
 
 const NavbarContainer = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(null); // Track hovered item
   const timeoutRef = useRef(null);
 
   const handleMouseEnter = (dropdownName) => {
@@ -16,7 +21,20 @@ const NavbarContainer = () => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setIsDropdownVisible(null);
-    }, 300); // Shorter delay to prevent premature hiding
+      setHoveredItem(null); // Reset hovered item when leaving
+    }, 600);
+  };
+
+  const handleItemHover = (item) => {
+    setHoveredItem(item);
+  };
+
+  const imagesMap = {
+    'passu-item1': [logo, passuA], // List of images for item1
+    'passu-item2': [imageA1, imageA2], // List of images for item2
+    'batura-item1': [imageA1, imageA2], // Replace with real images
+    'batura-item2': [logo], // Replace with real images
+    // Add more mappings as needed
   };
 
   return (
@@ -48,14 +66,18 @@ const NavbarContainer = () => {
                       <div className="custom-dropdown_main_content_slider">
                         <div className="custom-dropdown_list">
                           <ul>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
+                            <li onMouseEnter={() => handleItemHover('passu-item1')}>Item 1</li>
+                            <li onMouseEnter={() => handleItemHover('passu-item2')}>Item 2</li>
                           </ul>
                         </div>
                         <div className="custom-dropdown_images">
-                          <img src="image1.jpg" alt="Image 1" style={{ width: '100%', height: 'auto' }} />
-                          <img src="image2.jpg" alt="Image 2" style={{ width: '100%', height: 'auto' }} />
+                          {hoveredItem && imagesMap[hoveredItem]?.map((image, index) => (
+                          <div className='passu_images_container_flex'>
+                           
+                            <img key={index} src={image} alt={`Passu Image ${index + 1}`}  />
+                            <p>{`Image ${index + 1}`}</p>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -81,14 +103,19 @@ const NavbarContainer = () => {
                       <div className="custom-dropdown_main_content_slider">
                         <div className="custom-dropdown_list">
                           <ul>
-                            <li>Item A</li>
-                            <li>Item B</li>
-                            <li>Item C</li>
+                            <li onMouseEnter={() => handleItemHover('batura-item1')}>Item A</li>
+                            <li onMouseEnter={() => handleItemHover('batura-item2')}>Item B</li>
                           </ul>
                         </div>
                         <div className="custom-dropdown_images">
-                          <img src="imageA.jpg" alt="Image A" style={{ width: '100%', height: 'auto' }} />
-                          <img src="imageB.jpg" alt="Image B" style={{ width: '100%', height: 'auto' }} />
+
+                          {hoveredItem && imagesMap[hoveredItem]?.map((image, index) => (
+                             <div className='passu_images_container_flex'>
+                           
+                            <img key={index} src={image} alt={`Batura Image ${index + 1}`}  />
+                            <p>{`Image ${index + 1}`}</p>
+                           </div>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -116,14 +143,20 @@ const NavbarContainer = () => {
                     <div className="custom-dropdown_main_content_slider">
                       <div className="custom-dropdown_list">
                         <ul>
-                          <li>Media Item 1</li>
-                          <li>Media Item 2</li>
+                          <li onMouseEnter={() => handleItemHover('media-item1')}>Media Item 1</li>
+                          <li onMouseEnter={() => handleItemHover('media-item2')}>Media Item 2</li>
                         </ul>
                       </div>
-                      <div className="custom-dropdown_images">
-                        <img src="media1.jpg" alt="Media 1" style={{ width: '100%', height: 'auto' }} />
-                        <img src="media2.jpg" alt="Media 2" style={{ width: '100%', height: 'auto' }} />
-                      </div>
+
+                      {/* <div className="custom-dropdown_images">
+                        {hoveredItem && imagesMap[hoveredItem]?.map((image, index) => (
+                          <div key={index} className="image-container">
+                            <img className='image_h_b' src={image} alt={`Passu Image ${index + 1}`} />
+                            <p>{`Image ${index + 1}`}</p>
+                          </div>
+                        ))}
+                      </div> */}
+
                     </div>
                   </div>
                 )}

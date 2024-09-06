@@ -86,9 +86,9 @@
 .custom-dropdown {
     position: absolute;
     top: 250%; /* Adjust this value based on your layout */
-    left: 50%; /* Centering horizontally */
+    left: 0%; /* Centering horizontally */
     transform: translateX(-50%) translateY(10px); /* Adjust vertical and horizontal positioning */
-    min-width: 1300px;
+    min-width: 1100px;
     height: 500px;
     background-color: white;
     border: 1px solid #ddd;
@@ -97,8 +97,8 @@
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    display: flex; /* Use flexbox for layout */
-    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+    display: flex;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Slower transition */
 }
 
 /* Buffer area to extend hover zone */
@@ -113,11 +113,11 @@
 
 .navbar_container_main_slider_flex_ul .dropdown:hover .custom-dropdown,
 .navbar_container_main_slider_flex_ul .dropdown:hover .buffer-area {
-    opacity: 1; /* Show on hover */
+    opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0); /* Smooth slide-down effect */
+    transform: translateX(-50%) translateY(0);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Increased to 1.5s for slower effect */
 }
-
 
 
 .custom-dropdown_main_content_slider{
@@ -135,8 +135,11 @@
 
 .custom-dropdown_images {
     width: 80%;
-    padding: 10px; /* Optional padding */
+    padding: 10px;
+    display: flex; /* Use flexbox for horizontal layout */
+    gap: 20px; /* Add gap between the images */
 }
+
 
 .navbar_container_main_slider_flex_ul .dropdown:hover .custom-dropdown,
 .navbar_container_main_slider_flex_ul .dropdown:hover .buffer-area {
@@ -163,4 +166,39 @@
     background-color: #f0f0f0; /* Light grey background on hover */
     color: #95723f; /* Change text color on hover */
     cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Style for the image container */
+.image-container {
+    position: relative;
+    width: 80px; /* Increase container size if needed */
+    height: 80px;
+    overflow: hidden; /* Ensure the image doesn’t overflow */
+    margin: 10px;
+    text-align: center;
+}
+
+.image_h_b{
+    width: 100px;
+    height: 10px;
+}
+
+.passu_images_container_flex {
+    display: flex;
+    flex-direction: column; /* Keeps image and caption in a column */
+    align-items: center; /* Center the image and caption */
+    text-align: center;
+}
+
+.passu_images_container_flex img {
+    width: 200px; /* Adjust width of the images */
+    height: 200px; /* Adjust height of the images */
+    object-fit: cover; /* Keep the image proportionally cropped */
+    margin-bottom: 10px; /* Space between image and caption */
+}
+
+.passu_images_container_flex p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Adjust font size if necessary */
+    color: #333; /* Text color */
 }
