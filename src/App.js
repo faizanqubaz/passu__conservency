@@ -6,6 +6,7 @@ import MapContainerComponent from './components/map/mapcontainer'
 import DiscountComponent from './components/Discounts_New_Hunt/discount'
 import PopularHuntComponent from './components/Popular_Hunt/popularhunt'
 import NewHuntComponent from './components/New_Hunt/newhunt'
+import GuideComponent from './components/guides/guide'
 function App() {
   return (
      <>
@@ -17,6 +18,7 @@ function App() {
       <DiscountComponent />
       <PopularHuntComponent />
       <NewHuntComponent />
+      <GuideComponent />
      </>
    
   );
