@@ -110,3 +110,32 @@
     margin-right: auto; /* Center the line */
 }
 
+.guide_main__video_container_content{
+    height: 200px;
+    max-width: 306px;
+    margin: auto;
+}
+
+.guide_main__video_container_content_image{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.guide_main__video_container_content_image_main{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.guide_main__video_container_content_image_content_flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.guide_main__video_container_content_image_content_flex_star{
+    margin-top: 1px;
+    color: #ababab;
+    font-family: none;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}

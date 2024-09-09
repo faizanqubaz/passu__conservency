@@ -2,9 +2,10 @@ import './guide.css';
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import image2 from '../assets/pasu2.jpg';
 import video1 from '../assets/passu.mp4'; // Replace with your actual video files
 import video2 from '../assets/batura.mp4';
-import video3 from '../assets/passu.mp4';
+import video3 from '../assets/batura1.mp4';
 
 const discountData = [
   {
@@ -60,6 +61,7 @@ const Guide = () => {
         <div className='guide_main_container_slider_head'>
           <div className='guide_main_container_slider_flex'>
             <h2 className='guide_main_container_slider_heading'>Meet your Guides</h2>
+            <FontAwesomeIcon color='black'  style={{marginLeft:'10px'}}    icon={faAnglesRight} fontSize={'20px'} />
           </div>
         </div>
 
@@ -82,14 +84,27 @@ const Guide = () => {
                 width="100%"
                 height="233px"
               />
-              <p className='guide_main__video_container_one_image_paragraph'>{item.description}</p>
-              <div className='guide_main__image_container_one_head'>
-                <p style={{color:'#dbb127'}}>price from</p>
-                <p style={{color:'#dbb127'}}>{item.priceFrom}</p>
-              </div>
-              <div className='guide_main__image_container_two_head'>
-                <p>{item.priceCurrent}</p>
-                <p>{item.offer}</p>
+              <div className='guide_main__video_container_content'>
+
+                <div className='guide_main__video_container_content_image'>
+                <img className='guide_main__video_container_content_image_main' src={image2} alt='' />
+                <div className='guide_main__video_container_content_image_content'>
+                  <h2 style={{margin:'0px',fontFamily:'Roboto',letterSpacing:'1px',fontSize:'21px'}}>FaizanAdil</h2>
+                  <p style={{    marginTop: '1px'}}>Passu gojal Hunza</p>
+                  <div className='guide_main__video_container_content_image_content_flex'>
+                    <p className='guide_main__video_container_content_image_content_flex_star' style={{    margin: '0px'}}>****</p>
+                    <p className='guide_main__video_container_content_image_content_flex_star' style={{    margin: '0px'}}>7.3</p>
+                    <p className='guide_main__video_container_content_image_content_flex_star' style={{    margin: '0px'}}>2 review</p>
+
+                  </div>
+
+
+                </div>
+                </div>
+
+                <p style={{fontFamily:'monospace'}}>hello my name is faizan adil iam a villape of passu</p>
+
+
               </div>
             </div>
           ))}

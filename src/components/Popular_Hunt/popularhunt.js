@@ -1,7 +1,7 @@
 import './popularhunt.css';
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import { faAnglesLeft,faAnglesRight,faStar, faStarHalfAlt  } from '@fortawesome/free-solid-svg-icons';
 import image10 from '../assets/passu9.jpg';
 import image4 from '../assets/passu4.jpg';
 import image2 from '../assets/pasu2.jpg';
@@ -10,7 +10,7 @@ const discountData = [
   {
     id: 1,
     image: image4,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
+    description: "3 days hunt at yunz valley 52 inch(1 Ibex) Sialkot Pakistan",
     priceFrom: "******",
     priceCurrent: "$45000",
     priceOld: "$47000",
@@ -27,7 +27,7 @@ const discountData = [
   {
     id: 3,
     image: image10,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
+    description: "3 days hunt at yunz valley 52 inch(1 Ibex) Sialkot Pakistan",
     priceFrom: "******",
     priceCurrent: "$45000",
     offer: "for 16 day 1 hunter"
@@ -35,7 +35,7 @@ const discountData = [
   {
     id: 4,
     image: image10,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
+    description: "3 days hunt at yunz valley 52 inch(1 Ibex) Sialkot Pakistan",
     priceFrom: "******",
     priceCurrent: "$45000",
     offer: "for 16 day 1 hunter"
@@ -51,7 +51,7 @@ const discountData = [
   {
     id: 6,
     image: image10,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
+    description: "3 days hunt at yunz valley 52 inch(1 Ibex) Sialkot Pakistan",
     priceFrom: "******",
     priceCurrent: "$45000",
     offer: "for 18 day 1 hunter"
@@ -84,6 +84,7 @@ const PopularHunt = () => {
         <div className='popular_main_container_slider_head'>
           <div className='popular_main_container_slider_flex'>
             <h2 className='popular_main_container_slider_heading'>Popular hunts</h2>
+            <FontAwesomeIcon color='#dbb127'  style={{marginLeft:'10px'}}  icon={faAnglesRight} fontSize={'20px'} />
           </div>
           <p className='popular_main_container_slider_para_head'>All Offers</p>
         </div>
@@ -106,11 +107,16 @@ const PopularHunt = () => {
               />
               <p className='popular_main__image_container_one_image_paragraph'>{item.description}</p>
               <div className='popular_main__image_container_one_head'>
-                <p style={{color:'#dbb127'}}>price from</p>
-                <p style={{color:'#dbb127'}}>{item.priceFrom}</p>
+                <p style={{color:'#dbb127',fontsize: '12px'}}>package price</p>
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <p style={{color:'#dbb127'}}>(3.6)</p>
               </div>
               <div className='popular_main__image_container_two_head'>
-                <p>{item.priceCurrent}</p>
+                <p style={{marginTop: '15px', fontSize: '21px'}}>{item.priceCurrent}</p>
                 <p>{item.offer}</p>
               </div>
             </div>

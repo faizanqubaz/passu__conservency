@@ -10,36 +10,35 @@ const discountData = [
   {
     id: 1,
     image: image4,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
+    description: "3 Days, (52 Inches 1 Ibex )",
     priceFrom: "******",
-    priceCurrent: "$45000",
-    priceOld: "$47000",
+    priceCurrent: "$ 45000",
     offer: "for 16 day 1 hunter"
   },
   {
     id: 2,
     image: image2,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
+    description: "1 Days Fox, (Large Size)",
     priceFrom: "******",
-    priceCurrent: "$45000",
+    priceCurrent: "$ 45000",
     priceOld: "$47000",
     offer: "for 16 day 1 hunter"
   },
   {
     id: 3,
     image: image10,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
+    description: "4 Days Bear, (Female 4 ton)",
     priceFrom: "******",
-    priceCurrent: "$45000",
+    priceCurrent: "$ 45000",
     priceOld: "$47000",
     offer: "for 16 day 1 hunter"
   },
   {
     id: 4,
     image: image10,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
+    description: "3 Days Duck, (1 female Duck)",
     priceFrom: "******",
-    priceCurrent: "$45000",
+    priceCurrent: "$ 45000",
     priceOld: "$47000",
     offer: "for 16 day 1 hunter"
   },
@@ -48,14 +47,14 @@ const discountData = [
     image: image10,
     description: "14 Days Leopard, Buffalo & P/G (1:1)",
     priceFrom: "******",
-    priceCurrent: "$45000",
+    priceCurrent: "$ 45000",
     priceOld: "$47000",
     offer: "for 17 day 1 hunter"
   },
   {
     id: 6,
     image: image10,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
+    description: "13 Days Markhor, (33 Inches)",
     priceFrom: "******",
     priceCurrent: "$45000",
     priceOld: "$47000",
@@ -89,8 +88,10 @@ const Discount = () => {
         <div className='discount_main_container_slider_head'>
           <div className='discount_main_container_slider_flex'>
             <h2 className='discount_main_container_slider_heading'>Top Offers</h2>
+            <FontAwesomeIcon color='#dbb127' style={{marginLeft:'10px'}}   icon={faAnglesRight} fontSize={'20px'} />
           </div>
           <p className='discount_main_container_slider_para_head'>All Offers tips</p>
+        
         </div>
 
         <div className="discount_main__arrow_left" onClick={handlePrev}>
@@ -111,12 +112,11 @@ const Discount = () => {
               />
               <p className='discount_main__image_container_one_image_paragraph'>{item.description}</p>
               <div className='discount_main__image_container_one_head'>
-                <p style={{color:'#dbb127'}}>price from</p>
-                <p style={{color:'#dbb127'}}>{item.priceFrom}</p>
+                <p style={{color:'#dbb127',marginBottom:'1px',fontsize: '13px'}}>package price</p>
+              
               </div>
               <div className='discount_main__image_container_two_head'>
-                <p>{item.priceCurrent}</p>
-                <p>{item.priceOld}</p>
+                <p style={{fontSize: '25px'}}>{item.priceCurrent}</p>
                 <p>{item.offer}</p>
               </div>
             </div>

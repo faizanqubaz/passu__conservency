@@ -1,7 +1,7 @@
 import './newhunt.css';
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import { faAnglesLeft, faAnglesRight,faStar, faStarHalfAlt  } from '@fortawesome/free-solid-svg-icons';
 import image10 from '../assets/passu9.jpg';
 import image4 from '../assets/passu4.jpg';
 import image2 from '../assets/pasu2.jpg';
@@ -84,6 +84,7 @@ const NewHunt = () => {
         <div className='newhunt_main_container_slider_head'>
           <div className='newhunt_main_container_slider_flex'>
             <h2 className='newhunt_main_container_slider_heading'>New hunts</h2>
+            <FontAwesomeIcon color='#dbb127' style={{marginLeft:'10px'}}  icon={faAnglesRight} fontSize={'20px'} />
           </div>
           <p className='newhunt_main_container_slider_para_head'>All New Hunts</p>
         </div>
@@ -107,10 +108,15 @@ const NewHunt = () => {
               <p className='newhunt_main__image_container_one_image_paragraph'>{item.description}</p>
               <div className='newhunt_main__image_container_one_head'>
                 <p style={{color:'#dbb127'}}>price from</p>
-                <p style={{color:'#dbb127'}}>{item.priceFrom}</p>
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                <p style={{color:'#dbb127'}}>(3.6)</p>
               </div>
               <div className='newhunt_main__image_container_two_head'>
-                <p>{item.priceCurrent}</p>
+                <p style={{marginTop: '15px', fontSize: '21px'}}>{item.priceCurrent}</p>
                 <p>{item.offer}</p>
               </div>
             </div>
