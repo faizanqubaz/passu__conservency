@@ -1,0 +1,105 @@
+.team_slider {
+    height: 400px;
+    background: rgb(239 239 239 / 10%);
+    overflow: hidden;  /* To hide the extra images */
+}
+
+.team_slider_content {
+    max-width: 1200px;
+    margin: auto;
+    height: 300px;
+    position: relative;
+    overflow: hidden; /* Ensures only the visible area is shown */
+}
+
+.team_slider_content_head {
+    display: flex;
+    justify-content: space-between;
+    width: 16%;
+    align-items: center;
+    margin-top: 54px;
+    margin-bottom: 12px;
+}
+
+.team_slider_content_head_heading {
+    font-size: 32px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-family: "Roboto", sans-serif;
+    color: rgb(10, 9, 9);
+}
+
+.team_slider_content_icons {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%; /* Width set to display only 3 images */
+    overflow: hidden; /* Ensure extra images are hidden */
+    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+}
+
+.team_slider_content_icons_image {
+    width: 30%; /* Each image takes up 30% so that 3 images fit perfectly */
+    height: 224px;
+    margin-right: 10px;
+}
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .team_slider_content_head_heading {
+        font-size: 20px; /* Adjust font size for medium screens */
+    }
+    .team_slider_content_icons_image {
+        width: 30%; /* Adjust width for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .team_slider_content_head_heading {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+    .team_slider_content_icons_image {
+        width: 33%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .team_slider_content_head_heading {
+        font-size: 16px; /* Further reduce font size for mobile screens */
+    }
+    .team_slider_content_icons_image {
+        width: 50%; /* Adjust width for mobile screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .team_slider_content_head_heading {
+        font-size: 14px; /* Further reduce font size for very small screens */
+    }
+    .team_slider_content_icons_image {
+        width: 100%; /* Make images take full width on very small screens */
+        margin-right: 0; /* Remove margin for very small screens */
+    }
+}
+
+
+/* Large Screens (Desktops and Laptops) */
+@media (min-width: 1200px) {
+    .team_slider_content_icons {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .team_slider_content_icons {
+        flex-wrap: wrap;
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 767px) {
+    .team_slider_content_icons {
+        flex-wrap: wrap;
+    }
+}

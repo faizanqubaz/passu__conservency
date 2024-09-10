@@ -42,3 +42,57 @@
   background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
   z-index: 0; /* Behind the text */
 }
+
+/* Media Queries for Responsiveness */
+
+/* For small devices (mobiles, max-width 600px) */
+@media screen and (max-width: 600px) {
+  .slider-container {
+    height: 300px; /* Reduce height for smaller screens */
+  }
+  
+  .text-overlay {
+    font-size: 18px; /* Smaller text */
+    top: 50px;
+    left: 20px;
+  }
+}
+
+/* For medium devices (tablets, max-width 768px) */
+@media screen and (max-width: 768px) {
+  .slider-container {
+    height: 400px; /* Adjust height for tablets */
+  }
+  
+  .text-overlay {
+    font-size: 24px; /* Adjust font size */
+    top: 80px;
+    left: 30px;
+  }
+}
+
+/* For laptops (max-width 1024px) */
+@media screen and (max-width: 1024px) {
+  .slider-container {
+    height: 500px;
+  }
+
+  .text-overlay {
+    font-size: 32px;
+    top: 100px;
+    left: 40px;
+  }
+}
+
+/* For larger screens */
+@media screen and (min-width: 1024px) {
+  .slider-container {
+    height: 600px;
+  }
+  
+  .text-overlay {
+    font-size: 40px;
+    top: 136px;
+    left: 83px;
+  }
+}

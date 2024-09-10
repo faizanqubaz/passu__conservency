@@ -122,3 +122,69 @@
     margin-right: auto; /* Center the line */
 }
 
+
+/* Media Queries for responsiveness */
+
+/* For tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .discount_main__image_container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .discount_main__image_container_one {
+        flex: 0 0 45%; /* Increase image width for tablets */
+    }
+
+    .discount_main__image_container_one_image {
+        height: 200px; /* Reduce image height */
+    }
+
+    .discount_main_container_slider_heading {
+        font-size: 26px; /* Smaller heading for tablets */
+    }
+
+    .discount_main_container_slider_para_head {
+        font-size: 16px; /* Smaller text */
+    }
+}
+
+/* For mobile devices (max-width: 600px) */
+@media (max-width: 600px) {
+    .discount_main__image_container {
+        flex-direction: column; /* Stack images vertically */
+        height: auto;
+    }
+
+    .discount_main__image_container_one {
+        flex: 0 0 100%; /* Each image takes full width */
+        margin-bottom: 20px; /* Add margin between images */
+    }
+
+    .discount_main__image_container_one_image {
+        height: 150px; /* Reduce image height */
+    }
+
+    .discount_main_container_slider_heading {
+        font-size: 22px; /* Smaller heading for mobile */
+    }
+
+    .discount_main_container_slider_para_head {
+        font-size: 14px;
+    }
+
+    .discount_main__arrow_left,
+    .discount_main__arrow_right {
+        font-size: 24px; /* Smaller arrows for mobile */
+    }
+}
+
+/* For larger screens (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .discount_main__image_container {
+        height: 450px; /* Increase height for larger screens */
+    }
+
+    .discount_main__image_container_one_image {
+        height: 280px; /* Larger image height */
+    }
+}

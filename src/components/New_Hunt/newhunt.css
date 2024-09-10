@@ -120,3 +120,99 @@
     margin-right: auto; /* Center the line */
 }
 
+/* Responsive styles */
+
+/* Tablets and smaller devices */
+@media (max-width: 768px) {
+    .newhunt_main_container_slider {
+        height: auto;
+        padding-top: 20px;
+    }
+
+    .newhunt_main_container_slider_heading {
+        font-size: 24px;
+    }
+
+    .newhunt_main_container_slider_para_head {
+        font-size: 16px;
+    }
+
+    .newhunt_main__image_container {
+        flex-direction: column; /* Stack images vertically */
+        height: auto;
+    }
+
+    .newhunt_main__image_container_one {
+        flex: 0 0 100%; /* Full width on small screens */
+        margin-bottom: 20px; /* Space between images */
+    }
+
+    .newhunt_main__image_container_one_image {
+        height: 150px; /* Adjust image height for smaller screens */
+    }
+
+    .newhunt_main__image_container_one_image_paragraph {
+        font-size: 14px;
+    }
+
+    .newhunt_main__image_container_one_head {
+        font-size: 16px;
+    }
+
+    .newhunt_main__image_container_two_head {
+        font-size: 14px;
+    }
+
+    .newhunt_main__arrow_left, .newhunt_main__arrow_right {
+        font-size: 24px; /* Smaller arrow icons for smaller screens */
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .newhunt_main_container_slider {
+        padding-top: 10px;
+    }
+
+    .newhunt_main_container_slider_heading {
+        font-size: 20px;
+    }
+
+    .newhunt_main_container_slider_para_head {
+        font-size: 14px;
+    }
+
+    .newhunt_main__image_container {
+        flex-direction: column; /* Stack images vertically on very small screens */
+        height: auto;
+    }
+
+    .newhunt_main__image_container_one {
+        flex: 0 0 100%; /* Full width for each image on small screens */
+        margin-bottom: 15px; /* Space between images */
+    }
+
+    .newhunt_main__image_container_one_image {
+        height: 120px; /* Further adjust image height */
+    }
+
+    .newhunt_main__image_container_one_image_paragraph {
+        font-size: 12px;
+    }
+
+    .newhunt_main__image_container_one_head {
+        font-size: 14px;
+    }
+
+    .newhunt_main__image_container_two_head {
+        font-size: 12px;
+    }
+
+    .newhunt_main__arrow_left, .newhunt_main__arrow_right {
+        font-size: 20px; /* Even smaller arrow icons for very small screens */
+    }
+
+    .newhunt_main__arrow_right_hr {
+        margin-bottom: 10px; /* Reduced bottom margin for the line */
+    }
+}

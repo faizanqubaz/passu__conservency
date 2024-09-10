@@ -1,0 +1,84 @@
+.partner_slider {
+    height: 400px;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: hidden;  /* To hide the extra images */
+}
+
+.partner_slider_content {
+    max-width: 1200px;
+    margin: auto;
+    height: 300px;
+    position: relative;
+    overflow: hidden; /* Ensures only the visible area is shown */
+}
+
+.partner_slider_content_head {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    align-items: center;
+    margin-top: 54px;
+    margin-bottom: 12px;
+}
+
+.partner_slider_content_head_heading {
+    font-size: 32px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-family: "Roboto", sans-serif;
+    color: rgb(10, 9, 9);
+}
+
+.partner_slider_content_icons {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%; /* Width set to display only 3 images */
+    overflow: hidden; /* Ensure extra images are hidden */
+    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+}
+
+.partner_slider_content_icons_image {
+    width: 30%; /* Each image takes up 30% so that 3 images fit perfectly */
+    height: 224px;
+    margin-right: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .partner_slider_content_head_heading {
+        font-size: 28px; /* Adjust font size for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .partner_slider_content_head_heading {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+    .partner_slider_content_icons_image {
+        width: 33%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .partner_slider_content_head_heading {
+        font-size: 20px; /* Further reduce font size for tablets */
+    }
+    .partner_slider_content_icons {
+        flex-wrap: wrap; /* Allow wrapping of images on tablets */
+    }
+    .partner_slider_content_icons_image {
+        width: 50%; /* Adjust width for tablets */
+        margin-right: 0; /* Remove right margin for better wrapping */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+}
+
+@media (max-width: 576px) {
+    .partner_slider_content_head_heading {
+        font-size: 16px; /* Further reduce font size for mobile screens */
+    }
+    .partner_slider_content_icons_image {
+        width: 100%; /* Make images take full width on mobile screens */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+}

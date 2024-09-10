@@ -71,3 +71,100 @@
   transform: translateX(100px); /* Default position to right for paragraph */
   transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth transition */
 }
+
+
+/* RESPONSIVENESS */
+
+/* Small devices (max-width: 600px) */
+@media screen and (max-width: 600px) {
+  .introduction_slider_heading {
+    font-size: 20px;
+  }
+
+  .introduction_slider_paragraph {
+    font-size: 14px;
+    width: 100%; /* Full width for paragraphs on small devices */
+    line-height: 1.5;
+  }
+
+  .introduction_slider_para_image {
+    width: 100%; /* Full width for images on small devices */
+    transform: translateX(0); /* No translate on small screens */
+  }
+
+  .introduction_slider_para_image_slider_first,
+  .introduction_slider_para_image_slider_second {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
+    text-align: center; /* Center-align text */
+  }
+
+  .introduction_slider_para_image {
+    margin-bottom: 20px; /* Add some space between image and text */
+  }
+}
+
+/* Tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .introduction_slider_heading {
+    font-size: 22px;
+  }
+
+  .introduction_slider_paragraph {
+    font-size: 16px;
+    width: 90%; /* Paragraph takes up more width */
+    line-height: 1.6;
+  }
+
+  .introduction_slider_para_image {
+    width: 90%; /* Reduce image width slightly */
+    margin-bottom: 20px;
+  }
+
+  .introduction_slider_para_image_slider_first,
+  .introduction_slider_para_image_slider_second {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Laptops (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .introduction_slider_heading {
+    font-size: 24px;
+  }
+
+  .introduction_slider_paragraph {
+    font-size: 17px;
+    width: 75%;
+    line-height: 1.7;
+  }
+
+  .introduction_slider_para_image {
+    width: 65%; /* Slightly smaller images for laptops */
+    margin-bottom: 20px;
+  }
+
+  .introduction_slider_para_image_slider_first,
+  .introduction_slider_para_image_slider_second {
+    flex-direction: row; /* Horizontal layout for larger screens */
+    justify-content: space-between;
+  }
+}
+
+/* Desktops (min-width: 1025px) */
+@media screen and (min-width: 1025px) {
+  .introduction_slider_heading {
+    font-size: 28px;
+  }
+
+  .introduction_slider_paragraph {
+    font-size: 18px;
+    width: 51%;
+  }
+
+  .introduction_slider_para_image {
+    width: 47%;
+  }
+}

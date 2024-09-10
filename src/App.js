@@ -6,7 +6,11 @@ import MapContainerComponent from './components/map/mapcontainer'
 import DiscountComponent from './components/Discounts_New_Hunt/discount'
 import PopularHuntComponent from './components/Popular_Hunt/popularhunt'
 import NewHuntComponent from './components/New_Hunt/newhunt'
-import GuideComponent from './components/guides/guide'
+import GuideComponent from './components/guides/guide';
+import PartnersComponents from './components/partners/partners';
+import FooterComponents from './components/Footer/footer';
+import TeamComponent from './components/Team/team'
+
 function App() {
   return (
      <>
@@ -19,6 +23,9 @@ function App() {
       <PopularHuntComponent />
       <NewHuntComponent />
       <GuideComponent />
+      <PartnersComponents />
+      <TeamComponent />
+      <FooterComponents />
      </>
    
   );

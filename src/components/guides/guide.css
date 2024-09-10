@@ -139,3 +139,89 @@
     letter-spacing: 1px;
     word-spacing: 1px;
 }
+
+
+/* Media Queries */
+
+/* For tablets and small laptops */
+@media (max-width: 1024px) {
+    .guide_main_container_slider_heading {
+        font-size: 28px;
+    }
+
+    .guide_main_container_slider_para_head {
+        font-size: 16px;
+    }
+
+    .guide_main__image_container {
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .guide_main__image_container_one {
+        flex: 0 0 45%; /* Adjust width for smaller screens */
+    }
+
+    .guide_main__video_container_content {
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .guide_main__video_container_content_image_main {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .guide_main_container_slider_heading {
+        font-size: 24px;
+    }
+
+    .guide_main_container_slider_para_head {
+        font-size: 14px;
+    }
+
+    .guide_main__image_container {
+        flex-direction: column; /* Stack images vertically */
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .guide_main__image_container_one {
+        flex: 0 0 100%; /* Full width for mobile devices */
+        margin-bottom: 10px; /* Add some spacing between images */
+    }
+
+    .guide_main__video_container_content {
+        height: auto; /* Adjust height to fit content */
+        max-width: 100%; /* Full width for mobile devices */
+    }
+
+    .guide_main__video_container_content_image_main {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .guide_main_container_slider_heading {
+        font-size: 20px;
+    }
+
+    .guide_main_container_slider_para_head {
+        font-size: 12px;
+    }
+
+    .guide_main__image_container_one_image_paragraph {
+        font-size: 14px;
+    }
+
+    .guide_main__image_container_one_head {
+        font-size: 16px;
+    }
+
+    .guide_main__video_container_content_image_main {
+        width: 50px;
+        height: 50px;
+    }
+}
