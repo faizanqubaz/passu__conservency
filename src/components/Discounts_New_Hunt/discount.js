@@ -5,6 +5,7 @@ import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 import image10 from '../assets/passu9.jpg';
 import image4 from '../assets/passu4.jpg';
 import image2 from '../assets/pasu2.jpg';
+import { Link } from 'react-router-dom';
 
 const discountData = [
   {
@@ -75,7 +76,6 @@ const Discount = () => {
     );
   };
 
-  // Calculate the 3 images to display
   const visibleImages = [
     discountData[currentIndex],
     discountData[(currentIndex + 1) % discountData.length],
@@ -88,21 +88,21 @@ const Discount = () => {
         <div className='discount_main_container_slider_head'>
           <div className='discount_main_container_slider_flex'>
             <h2 className='discount_main_container_slider_heading'>Top Offers</h2>
-            <FontAwesomeIcon color='#dbb127' style={{marginLeft:'10px'}}   icon={faAnglesRight} fontSize={'20px'} />
+            <FontAwesomeIcon color='#dbb127' style={{ marginLeft: '10px' }} icon={faAnglesRight} fontSize={'20px'} />
           </div>
           <p className='discount_main_container_slider_para_head'>All Offers tips</p>
-        
         </div>
 
         <div className="discount_main__arrow_left" onClick={handlePrev}>
-          <FontAwesomeIcon  icon={faAnglesLeft} fontSize={'36px'} />
+          <FontAwesomeIcon icon={faAnglesLeft} fontSize={'36px'} />
         </div>
 
         <div className='discount_main__image_container'>
-          {/* Show only 3 images */}
-          {visibleImages.map((item, index) => (
-            <div 
+          {visibleImages.map((item) => (
+            <Link 
               key={item.id} 
+              to={`/discount/${item.id}`} 
+              state={{ item }} 
               className='discount_main__image_container_one'
             >
               <img 
@@ -112,20 +112,19 @@ const Discount = () => {
               />
               <p className='discount_main__image_container_one_image_paragraph'>{item.description}</p>
               <div className='discount_main__image_container_one_head'>
-                <p style={{color:'#dbb127',marginBottom:'1px',fontsize: '13px'}}>package price</p>
-              
+                <p style={{ color: '#dbb127', marginBottom: '1px', fontsize: '13px' }}>package price</p>
               </div>
               <div className='discount_main__image_container_two_head'>
-                <p style={{fontSize: '25px'}}>{item.priceCurrent}</p>
+                <p style={{ fontSize: '25px' }}>{item.priceCurrent}</p>
                 <p>{item.offer}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-<div className='discount_main__arrow_right_hr'>
-<hr  />
-</div>
-      
+
+        <div className='discount_main__arrow_right_hr'>
+          <hr />
+        </div>
 
         <div className="discount_main__arrow_right" onClick={handleNext}>
           <FontAwesomeIcon icon={faAnglesRight} fontSize={'36px'} />
@@ -136,3 +135,4 @@ const Discount = () => {
 };
 
 export default Discount;
+

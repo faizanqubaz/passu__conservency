@@ -1,0 +1,176 @@
+.discount_detail_main_container{
+    height: 1500px;
+    background: #f4f3f4;;
+}
+
+
+.discount_detail_container{
+    border: 1px solid black;
+    max-width: 1200px;
+    margin: auto;
+    height: 100px;
+    padding: 6px 27px;
+    background: white;
+ 
+}
+
+.discount_detail_main_container_content{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.discount_detail_main_container_content_one{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    margin-top: 5px;
+}
+
+.discount_detail_main_container_content_two{
+    display: flex;
+    justify-content: space-around;
+    width: 118%;
+    align-items: center;
+}
+
+
+.discount_detail_main_container_heading{
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+
+.discount_detail_main_container_content_two_paragraph{
+    display: block;
+    margin-bottom: 0px;
+    color: #ae8b2b;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.discount_detail_main_container_content_two_head{
+    color: #b94a48;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    font-size: 27px;
+}
+.discount_detail_main_container_content_two_para_two{
+    margin: 0;
+}
+
+.vertical-line {
+    border-left: 1px solid #ccc;
+    height: 90px; /* Adjust based on the height of your section */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.discount_detail_image_main_container{
+    max-width: 1298px;
+    margin: auto;
+    border: 1px solid black;
+    background: white;
+ 
+
+    display: flex;
+    justify-content: space-around;
+   
+    margin-top: 17px;
+}
+
+
+.discount_detail_image_main_container_one{
+
+
+    width: 65%;
+
+}
+
+.discount_detail_image_main_container_two{
+  
+
+    width: 30%;
+    padding: 18px 18px;
+
+    
+}
+
+
+
+
+
+.discount_detail_image_main_container_one_iamge{
+    width: 100%;
+}
+
+.discount_detail_image_main_container_one_iamge_round{
+    width: 100px;
+    height: 101px;
+    border-radius: 50%;
+}
+
+
+.discount_detail_image_main_container_one_iamge_round_flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.discount_detail_image_main_container_one_iamge_round_para_one{
+    margin: 0;
+    font-weight: 700;
+}
+
+.discount_detail_image_main_container_one_iamge_round_para_two{
+    margin: 0;
+    font-weight: 200;
+}
+.discount_detail_image_main_container_one_iamge_round_para_three{
+    margin: 0;
+}
+
+
+
+
+/* dolar */
+
+
+.discount_detail_dolar_main_container{
+    max-width: 1298px;
+    margin: auto;
+    border: 1px solid black;
+    background: white;
+ 
+
+    display: flex;
+    justify-content: space-around;
+   
+    margin-top: 17px;
+}
+
+.discount_detail_dolar_main_container_one{
+    width: 65%; 
+    border: 1px solid black;
+    height: 400px;
+    padding: 10px 15px
+}
+
+.discount_detail_dolar_main_container_one_heading{
+    font-size: 26px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+.discount_detail_dolar_main_container_one_para{
+    font-family: "monsarat", sans-serif;
+    font-weight: 400;
+    word-spacing: 2px;
+}
