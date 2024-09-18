@@ -1,9 +1,9 @@
 .slider-container {
-  width: calc(100vw - 45px); /* Full width minus 45px for left and right margin */
+  width: calc(100vw - 34px); /* Full width minus 45px for left and right margin */
   height: 600px;
   position: relative;
   overflow: hidden;
-  margin: 36px auto; /* Centers the slider with margin at the top */
+  margin: 24px auto; /* Centers the slider with margin at the top */
 }
 
 .slide {

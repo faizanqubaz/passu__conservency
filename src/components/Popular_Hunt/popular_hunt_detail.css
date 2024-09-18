@@ -126,7 +126,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 73%;
+    width: 90%;
 }
 .discount_detail_image_main_container_one_iamge_round_para_one{
     margin: 0;
@@ -163,7 +163,7 @@
 .discount_detail_dolar_main_container_one{
     width: 65%; 
     border: 1px solid #b3b3b3;
-    /* height: 400px; */
+    height: 400px;
     padding: 10px 5px
 }
 

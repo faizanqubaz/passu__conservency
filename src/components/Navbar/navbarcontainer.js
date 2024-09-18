@@ -2,13 +2,14 @@ import React, { useState, useRef } from 'react';
 import './navbarcontainer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import passuA from '../assets/passu.jpg';
 // Import additional images
 import imageA1 from '../assets/pasu2.jpg';
 import imageA2 from '../assets/passu3.jpg';
 import imageA3 from '../assets/passu4.jpg';
-import image9 from '../assets/passu9.jpg'
+import image9 from '../assets/passu9.jpg';
 
 const NavbarContainer = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState('passu'); // Default dropdown open
@@ -20,7 +21,6 @@ const NavbarContainer = () => {
       clearTimeout(timeoutRef.current);
       setIsDropdownVisible(dropdownName);
     }, 700);
-  
   };
 
   const handleMouseLeave = () => {
@@ -35,10 +35,10 @@ const NavbarContainer = () => {
   };
 
   const imagesMap = {
-    'passu-item1': [imageA2, passuA,imageA3], // List of images for item1
+    'passu-item1': [imageA2, passuA, imageA3], // List of images for item1
     'passu-item2': [imageA1, imageA2], // List of images for item2
     'batura-item1': [imageA1, imageA2], // Replace with real images
-    'batura-item2': [imageA3,image9], // Replace with real images
+    'batura-item2': [imageA3, image9], // Replace with real images
     // Add more mappings as needed
   };
 
@@ -52,7 +52,10 @@ const NavbarContainer = () => {
 
           <div className="navbar_container_main_slider_flex_div2">
             <ul className="navbar_container_main_slider_flex_ul">
-              <li className="navbar_container_main_slider_flex_ul_active">Home</li>
+              {/* Home Link */}
+              <Link to="/" className="navbar_container_main_slider_flex_link">
+                <li className="navbar_container_main_slider_flex_ul_active">Home</li>
+              </Link>
 
               {/* Passu Dropdown */}
               <li
@@ -73,7 +76,7 @@ const NavbarContainer = () => {
                           <ul>
                             <li onMouseEnter={() => handleItemHover('passu-item1')}>TupopDan</li>
                             <li onMouseEnter={() => handleItemHover('passu-item2')}>Avagadar</li>
-                            <li onMouseEnter={() => handleItemHover('passu-item2')}>Passu Gacier Side</li>
+                            <li onMouseEnter={() => handleItemHover('passu-item2')}>Passu Glacier Side</li>
                             <li onMouseEnter={() => handleItemHover('passu-item2')}>Khuramabad</li>
                             <li onMouseEnter={() => handleItemHover('passu-item2')}>Surnoabod</li>
                           </ul>
@@ -110,11 +113,11 @@ const NavbarContainer = () => {
                       <div className="custom-dropdown_main_content_slider">
                         <div className="custom-dropdown_list">
                           <ul>
-                            <li onMouseEnter={() => handleItemHover('batura-item1')}>Yunz valley</li>
-                            <li onMouseEnter={() => handleItemHover('batura-item2')}>Yashpert valley</li>
-                            <li onMouseEnter={() => handleItemHover('batura-item2')}>Gucesem valley</li>
-                            <li onMouseEnter={() => handleItemHover('batura-item2')}>YukhGoz valley</li>
-                            <li onMouseEnter={() => handleItemHover('batura-item2')}>Kukhail valley</li>
+                            <li onMouseEnter={() => handleItemHover('batura-item1')}>Yunz Valley</li>
+                            <li onMouseEnter={() => handleItemHover('batura-item2')}>Yashpert Valley</li>
+                            <li onMouseEnter={() => handleItemHover('batura-item2')}>Gucesem Valley</li>
+                            <li onMouseEnter={() => handleItemHover('batura-item2')}>YukhGoz Valley</li>
+                            <li onMouseEnter={() => handleItemHover('batura-item2')}>Kukhail Valley</li>
                           </ul>
                         </div>
                         <div className="custom-dropdown_images">
@@ -131,9 +134,15 @@ const NavbarContainer = () => {
                   </>
                 )}
               </li>
+              <Link to={'/aboutus'} className="navbar_container_main_slider_flex_link">
+                <li>About Us</li>
+              </Link>
 
-              <li>About Us</li>
+
               <li>Blog</li>
+
+
+
 
               {/* Media Dropdown */}
               <li
@@ -151,21 +160,33 @@ const NavbarContainer = () => {
                     <div className="media">
                       <div className="media-dropdown_content">
                         <ul>
+                          <Link to={'/video'} className='navbar_container_contactus_style'>
                           <li onMouseEnter={() => handleItemHover('media-item1')}>Videos</li>
+                          </Link>
+                         
+                          <Link to={'/gallery'} className='navbar_container_contactus_style'>
+                         
                           <li onMouseEnter={() => handleItemHover('media-item2')}>Gallery</li>
+
+                          </Link>
                         </ul>
                       </div>
                     </div>
                     <div className="buffer-area"></div>
                   </div>
-                  
                 )}
               </li>
-              
+              <Link to={'/sponsors'} className='navbar_container_contactus_style'>
+                <li>Sponsors</li>
+              </Link>
 
-              <li>Sponsors</li>
-              <li>Term & Condition</li>
-              <li>Contact Us</li>
+              <Link to={'/terms_and_conditions'} className='navbar_container_contactus_style'>
+                <li >Term & Condition</li>
+              </Link>
+
+              <Link className='navbar_container_contactus_style' to={'/contactus'}>
+                <li>Contact Us</li>
+              </Link>
             </ul>
           </div>
         </div>

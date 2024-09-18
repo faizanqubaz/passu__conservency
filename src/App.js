@@ -11,7 +11,16 @@ import PartnersComponents from './components/partners/partners';
 import FooterComponents from './components/Footer/footer';
 import TeamComponent from './components/Team/team';
 import DetailDiscountComponent from './components/Discounts_New_Hunt/detail_discount';
+import DetailPopularHuntComponent from './components/Popular_Hunt/popular_hunt_detail'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NewHuntDetailContainer from './components/New_Hunt/new_hunt_detail'
+import ContactUSContainer from './components/contactus/contactus'
+import TermsAndConditionComponent from './components/terms_and_condition/terms_and_condition';
+import AboutUsContainer from './components/AboutUS/aboutus'
+import SponsorsContainer from './components/Sponsors/sponsors'
+import GalleryComponent from './components/Gallery/gallery'
+import VideoComponent from './components/Video/video'
+
 
 function App() {
   return (
@@ -41,6 +50,14 @@ function App() {
         />
         {/* Route for detail page */}
         <Route path="/discount/:id" element={<DetailDiscountComponent />} />
+        <Route path="/popularhunt/:id" element={<DetailPopularHuntComponent />} />
+        <Route path="/newhunt/:id" element={<NewHuntDetailContainer />} />
+        <Route path="/contactus" element={<ContactUSContainer />} />
+        <Route path="/terms_and_conditions" element={<TermsAndConditionComponent />} />
+        <Route path="/aboutus" element={<AboutUsContainer />} />
+        <Route path="/sponsors" element={<SponsorsContainer />} />
+        <Route path="/gallery" element={<GalleryComponent />} />
+        <Route path='/video' element={<VideoComponent />} />
       </Routes>
     </Router>
   );

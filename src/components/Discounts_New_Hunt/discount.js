@@ -14,7 +14,11 @@ const discountData = [
     description: "3 Days, (52 Inches 1 Ibex )",
     priceFrom: "******",
     priceCurrent: "$ 45000",
-    offer: "for 16 day 1 hunter"
+    priceOld: "$47000",
+    offer: "for 16 day 1 hunter",
+    location:"passu hunza",
+     guide:"aliyan adil",
+     rate:'44%'
   },
   {
     id: 2,
@@ -23,7 +27,10 @@ const discountData = [
     priceFrom: "******",
     priceCurrent: "$ 45000",
     priceOld: "$47000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+    location:"passu hunza",
+     guide:"aliyan adil",
+     rate:'44%'
   },
   {
     id: 3,
@@ -32,7 +39,10 @@ const discountData = [
     priceFrom: "******",
     priceCurrent: "$ 45000",
     priceOld: "$47000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+    location:"passu hunza",
+     guide:"aliyan adil",
+     rate:'44%'
   },
   {
     id: 4,
@@ -41,7 +51,10 @@ const discountData = [
     priceFrom: "******",
     priceCurrent: "$ 45000",
     priceOld: "$47000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+    location:"passu hunza",
+    guide:"aliyan adil",
+    rate:'44%'
   },
   {
     id: 5,
@@ -50,7 +63,10 @@ const discountData = [
     priceFrom: "******",
     priceCurrent: "$ 45000",
     priceOld: "$47000",
-    offer: "for 17 day 1 hunter"
+    offer: "for 17 day 1 hunter",
+    location:"passu hunza",
+    guide:"adil aman",
+    rate:'44%'
   },
   {
     id: 6,
@@ -59,7 +75,10 @@ const discountData = [
     priceFrom: "******",
     priceCurrent: "$45000",
     priceOld: "$47000",
-    offer: "for 18 day 1 hunter"
+    offer: "for 18 day 1 hunter",
+    location:"passu hunza",
+    guide:"faizan adil",
+    rate:'44%'
   }
 ];
 

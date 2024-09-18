@@ -1,227 +1,89 @@
-.guide_main_container {
-    background-color: #ffffff;
-}
-
-.guide_main_container_slider {
-    max-width: 1200px;
+.guide-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    max-width: 1275px;
     margin: auto;
-    position: relative;
-    height: 500px;
-    padding-top: 69px;
-    overflow: hidden; /* Hide images outside the visible container */
+    position: relative; /* Added to position arrows relative to the guide-container */
 }
 
-.guide_main_container_slider_head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.guide_main_container_slider_flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.guide_main_container_slider_heading {
+.title {
     font-size: 32px;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Roboto';
 }
 
-.guide_main_container_slider_para_head {
-    font-size: 19px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
+.arrow {
+    color: #b3922a;
 }
 
-.guide_main__image_container {
+.guides-grid {
     display: flex;
-    justify-content: space-between; /* Space out the 3 images */
-    height: 400px;
-    transition: transform 0.8s ease; /* Smooth transition */
-    transform: translateX(0); /* Default state for image container */
+    justify-content: space-between;
+    gap: 20px;
+    position: relative; /* Ensure child elements like guide-card stay within this area */
 }
 
-.guide_main__image_container_one {
-    flex: 0 0 30%; /* Make each image take up 30% of the container */
-    background-color: #ffffff;
-    border: 1px solid #e9e9e9;
+.guide-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+    transition: transform 0.3s;
 }
 
-.guide_main__image_container_one_image {
-    width: 100%;
-    height: 233px;
-    cursor: pointer;
+.guide-card:hover {
+    transform: scale(1.05);
 }
 
-.guide_main__image_container_one_image_paragraph {
-    font-size: 16px;
-    text-align: center;
-    letter-spacing: 2px;
-    word-spacing: 5px;
-    margin-bottom: 0px;
-}
-
-.guide_main__image_container_one_head{
-    letter-spacing: 2px;
-    display: flex;
-    justify-content: space-around;
-    font-size: 18px;
-    word-spacing: 4px;
-    font-family: "Roboto", sans-serif;
-
-}
-
-.guide_main__image_container_two_head {
-    display: flex;
-    justify-content: space-around;
-
-    font-family: "Roboto", sans-serif;
-}
-
-.guide_main__arrow_left, .guide_main__arrow_right {
+.left-arrow, .right-arrow {
+    background-color: #b3922a;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    color: #dbb127;
-    z-index: 2;
+    transition: background-color 0.3s ease;
+    z-index: 1; /* Ensure arrows are above other content */
 }
 
-.guide_main__arrow_left {
-    left: 0;
+
+
+.right-arrow {
+    right: 36px; /* Adjust the position to the right of the container */
 }
 
-.guide_main__arrow_right {
-    right: 0;
+.left-arrow:hover, .right-arrow:hover {
+    background-color: #d1a44a;
 }
 
-.guide_main__arrow_right_hr {
-    border: 0;
-    height: 2px; /* Thickness of the line */
-    background-color: #dbb127; /* Line color */
-    padding-top: 3px; /* Adjust the top margin as needed */
-    margin-bottom: 20px; /* Add bottom margin for spacing */
-    width: 100%; /* Full width */
-    max-width: 80%; /* Optional: You can reduce the width if needed */
-    margin-left: auto;
-    margin-right: auto; /* Center the line */
+
+.guide_info_heading{
+font-family: 'Monsarat';
+margin-top: 2px;
+margin-bottom: 1px;
 }
 
-.guide_main__video_container_content{
-    height: 200px;
-    max-width: 306px;
-    margin: auto;
+.guide_info_para{
+    font-family: 'Monsarat'; 
+    margin-top: 2px;
+margin-bottom: 1px; 
 }
 
-.guide_main__video_container_content_image{
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-}
-.guide_main__video_container_content_image_main{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
 
-.guide_main__video_container_content_image_content_flex{
+.guide-info_container{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.guide_main__video_container_content_image_content_flex_star{
-    margin-top: 1px;
-    color: #ababab;
-    font-family: none;
-    letter-spacing: 1px;
-    word-spacing: 1px;
-}
 
-
-/* Media Queries */
-
-/* For tablets and small laptops */
-@media (max-width: 1024px) {
-    .guide_main_container_slider_heading {
-        font-size: 28px;
-    }
-
-    .guide_main_container_slider_para_head {
-        font-size: 16px;
-    }
-
-    .guide_main__image_container {
-        height: auto; /* Adjust height to fit content */
-    }
-
-    .guide_main__image_container_one {
-        flex: 0 0 45%; /* Adjust width for smaller screens */
-    }
-
-    .guide_main__video_container_content {
-        height: auto; /* Adjust height to fit content */
-    }
-
-    .guide_main__video_container_content_image_main {
-        width: 70px;
-        height: 70px;
-    }
-}
-
-/* For mobile devices */
-@media (max-width: 768px) {
-    .guide_main_container_slider_heading {
-        font-size: 24px;
-    }
-
-    .guide_main_container_slider_para_head {
-        font-size: 14px;
-    }
-
-    .guide_main__image_container {
-        flex-direction: column; /* Stack images vertically */
-        height: auto; /* Adjust height to fit content */
-    }
-
-    .guide_main__image_container_one {
-        flex: 0 0 100%; /* Full width for mobile devices */
-        margin-bottom: 10px; /* Add some spacing between images */
-    }
-
-    .guide_main__video_container_content {
-        height: auto; /* Adjust height to fit content */
-        max-width: 100%; /* Full width for mobile devices */
-    }
-
-    .guide_main__video_container_content_image_main {
-        width: 60px;
-        height: 60px;
-    }
-}
-
-/* For very small screens */
-@media (max-width: 480px) {
-    .guide_main_container_slider_heading {
-        font-size: 20px;
-    }
-
-    .guide_main_container_slider_para_head {
-        font-size: 12px;
-    }
-
-    .guide_main__image_container_one_image_paragraph {
-        font-size: 14px;
-    }
-
-    .guide_main__image_container_one_head {
-        font-size: 16px;
-    }
-
-    .guide_main__video_container_content_image_main {
-        width: 50px;
-        height: 50px;
-    }
+.rating_guide_image{
+    width: 95px;
+    height: 97px;
+    border-radius: 50%;
 }

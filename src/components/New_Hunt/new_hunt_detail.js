@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationArrow, faHeart, faShareAlt, faStar } from '@fortawesome/free-solid-svg-icons';
-import DiscountMap from './discount_map'; 
 import FooterComponent from '../Footer/footer'
-import './detail_discount.css';
+import './new_hunt_detail.css';
+import DiscountMap from '../Discounts_New_Hunt/discount_map'
 
-const DiscountDetail = () => {
+const NewHuntDetail = () => {
 const phoneNumber='3554329249'
 const email = 'faizanquba1@gmail.com'
     const handleWhatsAppClick = () => {
@@ -21,7 +21,7 @@ const email = 'faizanquba1@gmail.com'
 
     const location = useLocation();
     const { item } = location.state;
-console.log('item',item)
+
     const destination = {
         lat: item?.latitude || 22.33,  // Ensure the latitude is properly fetched
         lng: item?.longitude || 44.66, // Ensure the longitude is properly fetched
@@ -40,7 +40,6 @@ console.log('item',item)
                         <h2 className='discount_detail_main_container_heading'>{item.description}</h2>
                         <div className='discount_detail_main_container_content_one'>
                             <FontAwesomeIcon color='#dbb127' style={{ marginLeft: '10px' }} icon={faLocationArrow} fontSize={'20px'} />
-
                             <a
                                 href={googleMapsUrl}
                                 target="_blank"
@@ -184,4 +183,4 @@ console.log('item',item)
     );
 };
 
-export default DiscountDetail;
+export default NewHuntDetail;

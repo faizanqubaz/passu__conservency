@@ -1,59 +1,89 @@
-import './footer.css';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faExternalLinkSquareAlt} from '@fortawesome/free-solid-svg-icons';
-import {faFacebook,faYoutube,faInstagram} from '@fortawesome/free-brands-svg-icons'
-const Footer=()=>{
-    return(
-<>
-<div className='footers_slider'>
-     <div className='footer_main_head1'>
-     <h3 className='footer_slider_heading'>Subscribe to learn about our latest
-         <br /> news, updates and adventures.</h3>
-     </div>
-       <div className='footer_main_head2'>
-           
-    <i className='footer_main_icon'><FontAwesomeIcon  icon={faExternalLinkSquareAlt}  /></i>
-       <input placeholder='Enter Your Email' className='footer_slider_input' />
-       </div>
+import React from 'react';
+import './footer.css'; // CSS for styling
 
-</div>
+const FooterComponent = () => {
+    return (
+        <footer className="footer">
+            <div className="footer-top">
+                <div className="footer-logo-section">
+                    <h1 className="footer-logo">|Book <span>Your</span> Hunt|</h1>
+                    <p className="footer-tagline">FAIR CHASE, FAIR PRICE!</p>
+                    <div className="footer-selectors">
+                        <select className="footer-select">
+                            <option value="USD">USD</option>
+                            {/* Add more currencies as options */}
+                        </select>
+                        <select className="footer-select">
+                            <option value="ENG">ENG</option>
+                            {/* Add more languages as options */}
+                        </select>
+                    </div>
+                </div>
 
-<div className='footer_large_slider'>
-<div className='footer_large_slider_div'>
-<h1>RIT</h1>
-<h1>RIS</h1>
-<h1>Experience</h1>
-<h1>Our Company</h1>
-<div className='ffffooooo'>
-    <i className='footer_i_icon'><FontAwesomeIcon icon={faInstagram} /></i>
-    <i className='footer_i_icon'><FontAwesomeIcon icon={faFacebook} /></i>
-    <i className='footer_i_icon'><FontAwesomeIcon icon={faYoutube} /></i>
-</div>
-<p className='jj'>© 2024 Rivian. All Rights Reserved.</p>
-</div>
+                <div className="footer-links-section">
+                    <div className="footer-column">
+                        <h4>BYH</h4>
+                        <ul>
+                            <li><a href="/about">About us</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/mission">Our mission</a></li>
+                            <li><a href="/contact">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div className="footer-column">
+                        <h4>Website</h4>
+                        <ul>
+                            <li><a href="/why-use">Why use BYH</a></li>
+                            <li><a href="/hunting-map">Hunting map</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                            <li><a href="/terms">Terms & Conditions</a></li>
+                            <li><a href="/privacy">Privacy policy</a></li>
+                            <li><a href="/cookies">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                    <div className="footer-column">
+                        <h4>Why join</h4>
+                        <ul>
+                            <li><a href="/subscriptions">Smart subscriptions</a></li>
+                            <li><a href="/recommendations">Recommendations</a></li>
+                            <li><a href="/chats">Chats</a></li>
+                            <li><a href="/invite">Invite your friend</a></li>
+                            <li><a href="/favorites">Favorite hunts</a></li>
+                            <li><a href="/gift-cards">Gift cards</a></li>
+                        </ul>
+                    </div>
+                    <div className="footer-column">
+                        <h4>Account</h4>
+                        <ul>
+                            <li><a href="/login">Log in</a></li>
+                            <li><a href="/signup">Sign up</a></li>
+                            <li><a href="/partner">Become a partner</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<div className='footer_large_slider_div1'>
-    <p>Purchasing</p>
-    <p>Charging</p>
-    <p>Membership</p>
-    <p>Insurance</p>
-    <p>Services</p>
-</div>
-
-
-<div>
-<p>Stories</p>
-    <p>Support</p>
-    <p>Carries</p>
-    <p>Newsrooms</p>  
-</div>
-
-</div>
-
-
-
-</>
-    )
+            <div className="footer-bottom">
+                <div className="footer-copyright">
+                    <p>Copyright © 2024 BookYourHunt.com</p>
+                </div>
+                <div className="footer-social-icons">
+                    <a href="#"><i className="fab fa-facebook"></i></a>
+                    <a href="#"><i className="fab fa-twitter"></i></a>
+                    <a href="#"><i className="fab fa-youtube"></i></a>
+                    <a href="#"><i className="fab fa-instagram"></i></a>
+                </div>
+                <div className="footer-app-links">
+                    <img src="/path/to/appstore.png" alt="App Store" />
+                    <img src="/path/to/googleplay.png" alt="Google Play" />
+                </div>
+                <div className="footer-partner">
+                    <h4>|Bait <span>Your</span> Hook|</h4>
+                    <p>Online marketplace for fishing trips from the BYH team!</p>
+                </div>
+            </div>
+        </footer>
+    );
 }
 
-export default Footer
+export default FooterComponent;

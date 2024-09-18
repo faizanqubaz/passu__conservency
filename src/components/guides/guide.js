@@ -1,125 +1,108 @@
-import './guide.css';
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
-import image2 from '../assets/pasu2.jpg';
-import video1 from '../assets/passu.mp4'; // Replace with your actual video files
-import video2 from '../assets/batura.mp4';
-import video3 from '../assets/batura1.mp4';
+import React, { useState } from 'react';
+import './guide.css'; // CSS file
+import image1 from '../assets/team2.jpg'
+import video1 from '../assets/batura.mp4';
+import video2 from '../assets/batura1.mp4';
 
-const discountData = [
-  {
-    id: 1,
-    video: video1, // Replace with your video files
-    description: "Saad Khan Rizwi",
-    priceFrom: "******",
-    priceCurrent: "$45000",
-    offer: "for 16 day 1 hunter"
-  },
-  {
-    id: 2,
-    video: video2,
-    description: "Kevin Archer",
-    priceFrom: "******",
-    priceCurrent: "$45000",
-    offer: "for 16 day 1 hunter"
-  },
-  {
-    id: 3,
-    video: video3,
-    description: "Rechard willsmith",
-    priceFrom: "******",
-    priceCurrent: "$45000",
-    offer: "for 16 day 1 hunter"
-  }
-  // Add more video entries as needed
-];
+const GuideContainer = () => {
+  const guides = [
+    {
+      id: 1,
+      name: 'Royal Karoo Safaris',
+      location: 'Eastern Cape, South Africa',
+      rating: 9.7,
+      reviews: 5,
+      description: 'Our privately owned hunting area is 25 000 Acres in one block with a Boutique Lodge on site...',
+      videoSrc: video1,
+    },
+    {
+      id: 2,
+      name: 'Spear Safari cc',
+      location: 'Limpopo, South Africa',
+      rating: 9.8,
+      reviews: 6,
+      description: 'Small personalized hunting and touring company, owned by Marita and Ernest Dyason...',
+      videoSrc: video2,
+    },
+    {
+      id: 3,
+      name: 'Buffalo Legends',
+      location: 'Limpopo, South Africa',
+      rating: 9.8,
+      reviews: 7,
+      description: 'We guarantee an unforgettable hunting safari on 17 000 acres of pure African bush...',
+      videoSrc: video1,
+    },
+    {
+      id: 4,
+      name: 'Zingela Safaris',
+      location: 'KwaZulu-Natal, South Africa',
+      rating: 9.6,
+      reviews: 10,
+      description: 'Hunt wild African game on over 12,000 acres...',
+      videoSrc: video2,
+    },
+    {
+      id: 5,
+      name: 'Kalahari Safaris',
+      location: 'Northern Cape, South Africa',
+      rating: 9.9,
+      reviews: 8,
+      description: 'Enjoy Kalahari desert game hunting on an expansive private ranch...',
+      videoSrc: video1,
+    },
+  ];
 
-const Guide = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentGuideIndex, setCurrentGuideIndex] = useState(0);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % discountData.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? discountData.length - 1 : prevIndex - 1
+  const nextGuides = () => {
+    setCurrentGuideIndex((prevIndex) => 
+      prevIndex + 3 >= guides.length ? 0 : prevIndex + 3
     );
   };
 
-  // Calculate the 3 videos to display
-  const visibleVideos = [
-    discountData[currentIndex],
-    discountData[(currentIndex + 1) % discountData.length],
-    discountData[(currentIndex + 2) % discountData.length]
-  ];
+  const previousGuides = () => {
+    setCurrentGuideIndex((prevIndex) => 
+      prevIndex === 0 ? guides.length - 3 : prevIndex - 3
+    );
+  };
 
   return (
-    <div className="guide_main_container">
-      <div className='guide_main_container_slider'>
-        <div className='guide_main_container_slider_head'>
-          <div className='guide_main_container_slider_flex'>
-            <h2 className='guide_main_container_slider_heading'>Meet your Guides</h2>
-            <FontAwesomeIcon color='black'  style={{marginLeft:'10px'}}    icon={faAnglesRight} fontSize={'20px'} />
-          </div>
-        </div>
-
-        <div className="guide_main__arrow_left" onClick={handlePrev}>
-          <FontAwesomeIcon icon={faAnglesLeft} fontSize={'36px'} />
-        </div>
-
-        <div className='guide_main__image_container'>
-          {/* Show only 3 videos */}
-          {visibleVideos.map((item, index) => (
-            <div 
-              key={item.id} 
-              className='guide_main__image_container_one'
-            >
-              <video 
-                className='guide_main__video_container_one_video' 
-                src={item.video} 
-                alt={item.description}
-                controls
-                width="100%"
-                height="233px"
-              />
-              <div className='guide_main__video_container_content'>
-
-                <div className='guide_main__video_container_content_image'>
-                <img className='guide_main__video_container_content_image_main' src={image2} alt='' />
-                <div className='guide_main__video_container_content_image_content'>
-                  <h2 style={{margin:'0px',fontFamily:'Roboto',letterSpacing:'1px',fontSize:'21px'}}>FaizanAdil</h2>
-                  <p style={{    marginTop: '1px'}}>Passu gojal Hunza</p>
-                  <div className='guide_main__video_container_content_image_content_flex'>
-                    <p className='guide_main__video_container_content_image_content_flex_star' style={{    margin: '0px'}}>****</p>
-                    <p className='guide_main__video_container_content_image_content_flex_star' style={{    margin: '0px'}}>7.3</p>
-                    <p className='guide_main__video_container_content_image_content_flex_star' style={{    margin: '0px'}}>2 review</p>
-
-                  </div>
-
-
-                </div>
-                </div>
-
-                <p style={{fontFamily:'monospace'}}>hello my name is faizan adil iam a villape of passu</p>
-
-
-              </div>
+    <div className="guide-container">
+      <h2 className="title">Meet your guides <span className="arrow">»</span></h2>
+      <div className="guides-grid">
+        {guides.slice(currentGuideIndex, currentGuideIndex + 3).map(guide => (
+          <div className="guide-card" key={guide.id}>
+            <div className="guide-video">
+              <video width={'100%'} controls>
+                <source src={guide.videoSrc} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
-          ))}
-        </div>
-        
-        <div className='guide_main__arrow_right_hr'>
-          <hr />
-        </div>
-
-        <div className="guide_main__arrow_right" onClick={handleNext}>
-          <FontAwesomeIcon icon={faAnglesRight} fontSize={'36px'} />
-        </div>
+            <div className="guide-info">
+              <div className='guide-info_container'>
+             <div>
+             <h3 className='guide_info_heading'>{guide.name}</h3>
+             <p className='guide_info_para'>{guide.location}</p>
+             <div className="rating">
+                {'★'.repeat(5)} {guide.rating} • {guide.reviews} reviews
+              </div>
+              </div>
+              <img className='rating_guide_image' src={image1} />
+             
+                </div>
+              <p className="description">{guide.description}</p>
+              <button className="view-page-btn">View the outfitter page</button>
+            </div>
+          </div>
+        ))}
       </div>
+
+      {/* Move the arrows outside of guides-grid */}
+      <button className="left-arrow" onClick={previousGuides}>‹</button>
+      <button className="right-arrow" onClick={nextGuides}>›</button>
     </div>
   );
 };
 
-export default Guide;
+export default GuideContainer;

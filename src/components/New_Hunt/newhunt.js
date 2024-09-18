@@ -1,10 +1,11 @@
 import './newhunt.css';
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesLeft, faAnglesRight,faStar, faStarHalfAlt  } from '@fortawesome/free-solid-svg-icons';
+import { faAnglesLeft, faAnglesRight, faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import image10 from '../assets/passu9.jpg';
 import image4 from '../assets/passu4.jpg';
 import image2 from '../assets/pasu2.jpg';
+import { Link } from 'react-router-dom';
 
 const discountData = [
   {
@@ -14,7 +15,9 @@ const discountData = [
     priceFrom: "******",
     priceCurrent: "$45000",
     priceOld: "$47000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+    location:"passu",
+    rate:'44%'
   },
   {
     id: 2,
@@ -22,7 +25,10 @@ const discountData = [
     description: "14 Days Leopard, Buffalo & P/G (1:1)",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 16 day 1 hunter"
+    priceOld: "$47000",
+    offer: "for 16 day 1 hunter",
+     location:"passu",
+    rate:'44%'
   },
   {
     id: 3,
@@ -30,7 +36,10 @@ const discountData = [
     description: "14 Days Leopard, Buffalo & P/G (1:1)",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+    priceOld: "$47000",
+     location:"passu",
+    rate:'44%'
   },
   {
     id: 4,
@@ -38,7 +47,10 @@ const discountData = [
     description: "14 Days Leopard, Buffalo & P/G (1:1)",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+    priceOld: "$47000",
+     location:"passu",
+    rate:'44%'
   },
   {
     id: 5,
@@ -46,7 +58,10 @@ const discountData = [
     description: "14 Days Leopard, Buffalo & P/G (1:1)",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 17 day 1 hunter"
+    offer: "for 17 day 1 hunter",
+    priceOld: "$47000",
+     location:"passu",
+    rate:'44%'
   },
   {
     id: 6,
@@ -54,7 +69,10 @@ const discountData = [
     description: "14 Days Leopard, Buffalo & P/G (1:1)",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 18 day 1 hunter"
+    offer: "for 18 day 1 hunter",
+    priceOld: "$47000",
+     location:"passu",
+    rate:'44%'
   }
 ];
 
@@ -84,7 +102,7 @@ const NewHunt = () => {
         <div className='newhunt_main_container_slider_head'>
           <div className='newhunt_main_container_slider_flex'>
             <h2 className='newhunt_main_container_slider_heading'>New hunts</h2>
-            <FontAwesomeIcon color='#dbb127' style={{marginLeft:'10px'}}  icon={faAnglesRight} fontSize={'20px'} />
+            <FontAwesomeIcon color='#dbb127' style={{ marginLeft: '10px' }} icon={faAnglesRight} fontSize={'20px'} />
           </div>
           <p className='newhunt_main_container_slider_para_head'>All New Hunts</p>
         </div>
@@ -96,37 +114,37 @@ const NewHunt = () => {
         <div className='newhunt_main__image_container'>
           {/* Show only 3 images */}
           {visibleImages.map((item, index) => (
-            <div 
-              key={item.id} 
+            <Link
+              key={item.id}
+              to={`/newhunt/${item.id}`}
+              state={{ item }}
               className='newhunt_main__image_container_one'
             >
-              <img 
-                className='newhunt_main__image_container_one_image' 
-                src={item.image} 
-                alt={item.description} 
+              <img
+                className='newhunt_main__image_container_one_image'
+                src={item.image}
+                alt={item.description}
               />
               <p className='newhunt_main__image_container_one_image_paragraph'>{item.description}</p>
               <div className='newhunt_main__image_container_one_head'>
-                <p style={{color:'#dbb127'}}>price from</p>
+                <p style={{ color: '#dbb127' }}>price from</p>
                 <FontAwesomeIcon icon={faStar} color='#dbb127' />
                 <FontAwesomeIcon icon={faStar} color='#dbb127' />
                 <FontAwesomeIcon icon={faStar} color='#dbb127' />
                 <FontAwesomeIcon icon={faStar} color='#dbb127' />
                 <FontAwesomeIcon icon={faStar} color='#dbb127' />
-                <p style={{color:'#dbb127'}}>(3.6)</p>
+                <p style={{ color: '#dbb127' }}>(3.6)</p>
               </div>
               <div className='newhunt_main__image_container_two_head'>
-                <p style={{marginTop: '15px', fontSize: '21px'}}>{item.priceCurrent}</p>
+                <p style={{ marginTop: '15px', fontSize: '21px' }}>{item.priceCurrent}</p>
                 <p>{item.offer}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-<div className='newhunt_main__arrow_right_hr'>
-<hr  />
-</div>
-      
-
+        <div className='newhunt_main__arrow_right_hr'>
+          <hr />
+        </div>
         <div className="newhunt_main__arrow_right" onClick={handleNext}>
           <FontAwesomeIcon icon={faAnglesRight} fontSize={'36px'} />
         </div>

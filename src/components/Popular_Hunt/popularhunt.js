@@ -5,6 +5,7 @@ import { faAnglesLeft,faAnglesRight,faStar, faStarHalfAlt  } from '@fortawesome/
 import image10 from '../assets/passu9.jpg';
 import image4 from '../assets/passu4.jpg';
 import image2 from '../assets/pasu2.jpg';
+import { Link } from 'react-router-dom';
 
 const discountData = [
   {
@@ -14,7 +15,9 @@ const discountData = [
     priceFrom: "******",
     priceCurrent: "$45000",
     priceOld: "$47000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+    location:"passu",
+    rate:'44%'
   },
   {
     id: 2,
@@ -22,7 +25,10 @@ const discountData = [
     description: "14 Days Leopard, Buffalo & P/G (1:1)",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+     location:"passu",
+     priceOld: "$47000",
+    rate:'44%'
   },
   {
     id: 3,
@@ -30,7 +36,10 @@ const discountData = [
     description: "3 days hunt at yunz valley 52 inch(1 Ibex) Sialkot Pakistan",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+     location:"passu",
+     priceOld: "$47000",
+    rate:'44%'
   },
   {
     id: 4,
@@ -38,7 +47,10 @@ const discountData = [
     description: "3 days hunt at yunz valley 52 inch(1 Ibex) Sialkot Pakistan",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 16 day 1 hunter"
+    offer: "for 16 day 1 hunter",
+     location:"passu",
+    rate:'44%',
+    priceOld: "$47000",
   },
   {
     id: 5,
@@ -46,7 +58,10 @@ const discountData = [
     description: "14 Days Leopard, Buffalo & P/G (1:1)",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 17 day 1 hunter"
+    offer: "for 17 day 1 hunter",
+     location:"passu",
+    rate:'44%',
+    priceOld: "$47000",
   },
   {
     id: 6,
@@ -54,7 +69,10 @@ const discountData = [
     description: "3 days hunt at yunz valley 52 inch(1 Ibex) Sialkot Pakistan",
     priceFrom: "******",
     priceCurrent: "$45000",
-    offer: "for 18 day 1 hunter"
+    offer: "for 18 day 1 hunter",
+     location:"passu",
+    rate:'44%',
+    priceOld: "$47000",
   }
 ];
 
@@ -96,8 +114,10 @@ const PopularHunt = () => {
         <div className='popular_main__image_container'>
           {/* Show only 3 images */}
           {visibleImages.map((item, index) => (
-            <div 
+            <Link 
               key={item.id} 
+              to={`/popularhunt/${item.id}`} 
+              state={{ item }} 
               className='popular_main__image_container_one'
             >
               <img 
@@ -119,7 +139,7 @@ const PopularHunt = () => {
                 <p style={{marginTop: '15px', fontSize: '21px'}}>{item.priceCurrent}</p>
                 <p>{item.offer}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 <div className='popular_main__arrow_right_hr'>
