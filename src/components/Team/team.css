@@ -32,56 +32,54 @@
 .team_slider_content_icons {
     display: flex;
     justify-content: flex-start;
-    width: 100%; /* Width set to display only 3 images */
-    overflow: hidden; /* Ensure extra images are hidden */
-    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+    width: 100%;
+    overflow: hidden;
+
 }
 
 .team_slider_content_icons_image {
-    width: 30%; /* Each image takes up 30% so that 3 images fit perfectly */
+    width: 30%;
     height: 224px;
     margin-right: 10px;
 }
 
-
 /* Media Queries */
 @media (max-width: 1200px) {
     .team_slider_content_head_heading {
-        font-size: 20px; /* Adjust font size for medium screens */
+        font-size: 20px;
     }
     .team_slider_content_icons_image {
-        width: 30%; /* Adjust width for medium screens */
+        width: 30%;
     }
 }
 
 @media (max-width: 992px) {
     .team_slider_content_head_heading {
-        font-size: 18px; /* Adjust font size for smaller screens */
+        font-size: 18px;
     }
     .team_slider_content_icons_image {
-        width: 33%; /* Adjust width for smaller screens */
+        width: 33%;
     }
 }
 
 @media (max-width: 768px) {
     .team_slider_content_head_heading {
-        font-size: 16px; /* Further reduce font size for mobile screens */
+        font-size: 16px;
     }
     .team_slider_content_icons_image {
-        width: 50%; /* Adjust width for mobile screens */
+        width: 50%;
     }
 }
 
 @media (max-width: 576px) {
     .team_slider_content_head_heading {
-        font-size: 14px; /* Further reduce font size for very small screens */
+        font-size: 14px;
     }
     .team_slider_content_icons_image {
-        width: 100%; /* Make images take full width on very small screens */
-        margin-right: 0; /* Remove margin for very small screens */
+        width: 100%;
+        margin-right: 0;
     }
 }
-
 
 /* Large Screens (Desktops and Laptops) */
 @media (min-width: 1200px) {

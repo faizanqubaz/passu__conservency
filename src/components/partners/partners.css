@@ -32,9 +32,7 @@
 .partner_slider_content_icons {
     display: flex;
     justify-content: flex-start;
-    width: 100%; /* Width set to display only 3 images */
-    overflow: hidden; /* Ensure extra images are hidden */
-    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+    transition: transform 1s ease-in-out; /* Smooth sliding effect */
 }
 
 .partner_slider_content_icons_image {

@@ -1,33 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './partners.css';
 import logo1 from '../../components/assets/logo1.png';
 import logo2 from '../../components/assets/logo2.jpg';
 import logo3 from '../../components/assets/logo3.png';
 import logo4 from '../../components/assets/logo6.png'; 
-import logo8 from '../../components/assets/logo6.png'; 
 import logo5 from '../../components/assets/logo6.png'; 
 import logo6 from '../../components/assets/logo6.png'; 
-import logo7 from '../../components/assets/logo6.png';  // Assuming you want 4 logos
+import logo7 from '../../components/assets/logo6.png'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 
 const Partners = () => {
+  const [slideIndex, setSlideIndex] = useState(0); // Current slide index
+
   useEffect(() => {
-    const slider = document.querySelector('.partner_slider_content_icons');
-    let count = 0;
-    const totalWidth = slider.scrollWidth / 4;  // Adjust for looping
+    const intervalId = setInterval(() => {
+      setSlideIndex((prevIndex) => (prevIndex + 1) % 6);  // 6 is the number of logos
+    }, 2000); // Slide every 2 seconds
 
-    // Function to slide the logos from left to right
-    const slideLogos = () => {
-      count -= 1;  // Adjust sliding speed here
-      if (Math.abs(count) >= totalWidth) {
-        count = 0;  // Reset to the beginning
-      }
-      slider.style.transform = `translateX(${count}px)`;
-    };
-
-    const intervalId = setInterval(slideLogos, 20);  // Adjust speed by changing the interval time (ms)
-    
     return () => clearInterval(intervalId);  // Cleanup interval on component unmount
   }, []);
 
@@ -39,22 +29,18 @@ const Partners = () => {
           <FontAwesomeIcon color='#dbb127' style={{ marginLeft: '10px' }} icon={faAnglesRight} fontSize={'20px'} />
         </div>
 
-        <div className="partner_slider_content_icons">
+        <div className="partner_slider_content_icons" style={{ transform: `translateX(-${slideIndex * 33}%)` }}>
           <img className="partner_slider_content_icons_image" src={logo1} alt="Partner 1" />
           <img className="partner_slider_content_icons_image" src={logo2} alt="Partner 2" />
           <img className="partner_slider_content_icons_image" src={logo3} alt="Partner 3" />
           <img className="partner_slider_content_icons_image" src={logo4} alt="Partner 4" />
-          {/* Repeating the same images to create a looping effect */}
-          <img className="partner_slider_content_icons_image" src={logo1} alt="Partner 1" />
-          <img className="partner_slider_content_icons_image" src={logo2} alt="Partner 2" />
-          <img className="partner_slider_content_icons_image" src={logo3} alt="Partner 3" />
-          <img className="partner_slider_content_icons_image" src={logo1} alt="Partner 1" />
-          <img className="partner_slider_content_icons_image" src={logo2} alt="Partner 2" />
-          <img className="partner_slider_content_icons_image" src={logo3} alt="Partner 3" />
+          <img className="partner_slider_content_icons_image" src={logo5} alt="Partner 5" />
+          <img className="partner_slider_content_icons_image" src={logo6} alt="Partner 6" />
+          <img className="partner_slider_content_icons_image" src={logo7} alt="Partner 7" />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Partners;
