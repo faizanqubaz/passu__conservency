@@ -1,89 +1,27 @@
 import './discount.css';
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
-import image10 from '../assets/passu9.jpg';
-import image4 from '../assets/passu4.jpg';
-import image2 from '../assets/pasu2.jpg';
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAnglesLeft, faAnglesRight, faStar, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-
-const discountData = [
-  {
-    id: 1,
-    image: image4,
-    description: "3 Days, (52 Inches 1 Ibex )",
-    priceFrom: "******",
-    priceCurrent: "$ 45000",
-    priceOld: "$47000",
-    offer: "for 16 day 1 hunter",
-    location:"passu hunza",
-     guide:"aliyan adil",
-     rate:'44%'
-  },
-  {
-    id: 2,
-    image: image2,
-    description: "1 Days Fox, (Large Size)",
-    priceFrom: "******",
-    priceCurrent: "$ 45000",
-    priceOld: "$47000",
-    offer: "for 16 day 1 hunter",
-    location:"passu hunza",
-     guide:"aliyan adil",
-     rate:'44%'
-  },
-  {
-    id: 3,
-    image: image10,
-    description: "4 Days Bear, (Female 4 ton)",
-    priceFrom: "******",
-    priceCurrent: "$ 45000",
-    priceOld: "$47000",
-    offer: "for 16 day 1 hunter",
-    location:"passu hunza",
-     guide:"aliyan adil",
-     rate:'44%'
-  },
-  {
-    id: 4,
-    image: image10,
-    description: "3 Days Duck, (1 female Duck)",
-    priceFrom: "******",
-    priceCurrent: "$ 45000",
-    priceOld: "$47000",
-    offer: "for 16 day 1 hunter",
-    location:"passu hunza",
-    guide:"aliyan adil",
-    rate:'44%'
-  },
-  {
-    id: 5,
-    image: image10,
-    description: "14 Days Leopard, Buffalo & P/G (1:1)",
-    priceFrom: "******",
-    priceCurrent: "$ 45000",
-    priceOld: "$47000",
-    offer: "for 17 day 1 hunter",
-    location:"passu hunza",
-    guide:"adil aman",
-    rate:'44%'
-  },
-  {
-    id: 6,
-    image: image10,
-    description: "13 Days Markhor, (33 Inches)",
-    priceFrom: "******",
-    priceCurrent: "$45000",
-    priceOld: "$47000",
-    offer: "for 18 day 1 hunter",
-    location:"passu hunza",
-    guide:"faizan adil",
-    rate:'44%'
-  }
-];
+import axios from 'axios';
 
 const Discount = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [discountData, setDiscountData] = useState([]);
+
+  // Fetch data from API on component mount
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:4000/api/v2/ibex?hunttype=topoffertype`);
+        setDiscountData(response.data.data);
+      } catch (error) {
+        console.error('Error fetching discount data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % discountData.length);
@@ -95,11 +33,23 @@ const Discount = () => {
     );
   };
 
-  const visibleImages = [
-    discountData[currentIndex],
-    discountData[(currentIndex + 1) % discountData.length],
-    discountData[(currentIndex + 2) % discountData.length]
-  ];
+  // If data is not yet loaded, return a loading indicator
+  if (!discountData.length) {
+    return (
+      <div style={{ textAlign: 'center', padding: '50px' }}>
+        <FontAwesomeIcon icon={faSpinner} spin fontSize={'36px'} color='#dbb127' />
+      </div>
+    );
+  }
+
+  // Determine the number of items to display
+  const totalItems = discountData.length;
+  const itemsToShow = Math.min(3, totalItems); // Show up to 3 items
+  const visibleImages = [];
+
+  for (let i = 0; i < itemsToShow; i++) {
+    visibleImages.push(discountData[(currentIndex + i) % totalItems]);
+  }
 
   return (
     <div className="discount_main_container">
@@ -120,29 +70,40 @@ const Discount = () => {
           {visibleImages.map((item) => (
             <Link 
               key={item.id} 
-              to={`/discount/${item.id}`} 
+              to={`/discount/${item._id}`} 
               state={{ item }} 
               className='discount_main__image_container_one'
             >
               <img 
                 className='discount_main__image_container_one_image' 
-                src={item.image} 
+                src={item.ibexphotos[0]} 
                 alt={item.description} 
               />
               <p className='discount_main__image_container_one_image_paragraph'>{item.description}</p>
               <div className='discount_main__image_container_one_head'>
-                <p style={{ color: '#dbb127', marginBottom: '1px', fontsize: '13px' }}>package price</p>
+                <p className='discount_main__image_container_one_image_paragraph_main_para'>package price</p>
+                <div className='discount_main__image_container_one_image_paragraph_main_para_fsome'>
+                  <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                  <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                  <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                  <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                  <FontAwesomeIcon icon={faStar} color='#dbb127' />
+                  <p style={{ color: '#dbb127' }}>(3.6)</p>
+                </div>
               </div>
-              <div className='discount_main__image_container_two_head'>
-                <p style={{ fontSize: '25px' }}>{item.priceCurrent}</p>
-                <p>{item.offer}</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', width: '71%', color: 'white' }}>
+                <div className='discount_main__image_container_two_head'>
+                  <p style={{ fontSize: '25px' }}>{'$' + item.newPrice}</p>
+                  <p style={{ textDecoration: 'line-through' }}>{'$' + item.priceOld}</p>
+                </div>
+                <p style={{ fontSize: '14px', textTransform: 'capitalize' }}>between 1 - 31 march 2024</p>
               </div>
             </Link>
           ))}
         </div>
 
         <div className='discount_main__arrow_right_hr'>
-          <hr />
+          <hr className='discount_main__arrow_right_hr_in_common' />
         </div>
 
         <div className="discount_main__arrow_right" onClick={handleNext}>
@@ -154,4 +115,3 @@ const Discount = () => {
 };
 
 export default Discount;
-

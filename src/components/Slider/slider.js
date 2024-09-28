@@ -7,10 +7,10 @@ import video4 from '../assets/pasu9.mp4'
 
 const SliderContainer = () => {
   const videos = [
-    { url: video4, description: 'The Passu Ibex: resilient, agile, majestic, Karakoram, wild, iconic, powerful.' },
+    { url: video1, description: 'The Passu Ibex: resilient, agile, majestic, Karakoram, wild, iconic, powerful.' },
     { url: video1, description: 'The Batura Ibex: resilient, agile, majestic, Karakoram, wild, iconic, powerful.' },
-    { url: video2, description: 'The Yunz Ibex: resilient, agile, majestic, Karakoram, wild, iconic, powerful.' },
-    { url: video3, description: 'The Yunz Ibex: resilient, agile, majestic, Karakoram, wild, iconic, powerful.' },
+    { url: video2, description: 'The Avdagar Ibex: resilient, agile, majestic, Karakoram, wild, iconic, powerful.' },
+    { url: video3, description: 'The Himilayan Ibex: resilient, agile, majestic, Karakoram, wild, iconic, powerful.' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,6 +35,7 @@ const SliderContainer = () => {
         <video
           ref={videoRef}
           src={videos[currentIndex].url}
+          muted
           controls
           autoPlay
           onEnded={handleVideoEnd}

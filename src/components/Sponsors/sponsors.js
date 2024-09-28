@@ -39,7 +39,7 @@ const SponsorsComponent = () => {
      
       <div className="sponsors_image-slider">
         {visibleSponsors.map((sponsor, index) => (
-          <div key={index} className="slide">
+          <div key={index} className="sponsor_slide">
             <img src={sponsor.image} alt={sponsor.name} />
           </div>
         ))}

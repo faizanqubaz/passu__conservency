@@ -46,7 +46,7 @@ const email = 'faizanquba1@gmail.com'
                                 rel="noopener noreferrer"
                                 className='discount_detail_main_container_para'
                             >
-                               {item.location}
+                               {item.hunterlocation}
                             </a>
                         </div>
                     </div>
@@ -61,9 +61,9 @@ const email = 'faizanquba1@gmail.com'
                     <div>
                         <p className='discount_detail_main_container_content_two_paragraph'>Package price</p>
                         <div className='discount_detail_main_container_content_two'>
-                            <h2 className='discount_detail_main_container_content_two_head'>{item.priceCurrent}</h2>
+                            <h2 className='discount_detail_main_container_content_two_head'>{'$'+item.newPrice}</h2>
                         </div>
-                        <p className='discount_detail_main_container_content_two_para_two previous-price'>{item.priceOld}</p>
+                        <p className='discount_detail_main_container_content_two_para_two previous-price'>{'$'+item.priceOld}</p>
 
                     </div>
                 </div>
@@ -73,21 +73,21 @@ const email = 'faizanquba1@gmail.com'
 
             <div className='discount_detail_image_main_container'>
                 <div className='discount_detail_image_main_container_one'>
-                    <img className='discount_detail_image_main_container_one_iamge' src={item.image} alt='sa' />
+                    <img className='discount_detail_image_main_container_one_iamge' src={item.ibexphotos[0]} alt='sa' />
                 </div>
 
                 <div className='discount_detail_image_main_container_two'>
                     <div className='discount_detail_image_main_container_one_iamge_round_flex'>
-                        <img className='discount_detail_image_main_container_one_iamge_round' src={item.image} alt='sa' />
+                        <img className='discount_detail_image_main_container_one_iamge_round' src={item.guidephotos[0]} alt='sa' />
                         <div>
-                            <p className='discount_detail_image_main_container_one_iamge_round_para_one'>{item.guide} operation(Guide)</p>
+                            <p className='discount_detail_image_main_container_one_iamge_round_para_one'>{item.guideName} operation(Guide)</p>
                             <p className='discount_detail_image_main_container_one_iamge_round_para_two'>passu gojal</p>
                             <FontAwesomeIcon icon={faStar} color='#dbb127' />
                             <FontAwesomeIcon icon={faStar} color='#dbb127' />
                             <FontAwesomeIcon icon={faStar} color='#dbb127' />
                             <FontAwesomeIcon icon={faStar} color='#dbb127' />
                             <FontAwesomeIcon icon={faStar} color='#dbb127' />
-                            <p className='discount_detail_image_main_container_one_iamge_round_para_three'> response rate:{item.rate}</p>
+                            <p className='discount_detail_image_main_container_one_iamge_round_para_three'> response rate:4.5</p>
                         </div>
 
 
@@ -97,10 +97,10 @@ const email = 'faizanquba1@gmail.com'
                         <h2 className='discount_detail_image_main_container_one_iamge_round_para_three_container_head'>More about us</h2>
                         <div className='discount_detail_scrollable_content'>
                             <p className='discount_detail_image_main_container_one_iamge_round_para_three_container_para'>
-                                {item.guide}
-                                {item.location}
+                                {item.guideName}
+                                {item.hunterlocation}
                                 9.4
-                                Response rate: {item.rate}
+                                Response rate: 4.5
                                 Response time: within a day
                                 Contact outfitter
                                 <br />
@@ -135,7 +135,7 @@ const email = 'faizanquba1@gmail.com'
                 <div className='discount_detail_dolar_main_container_two'>
 
                     <div className='discount_detail_dolar_main_container_two_dolar_head'>
-                        <h2 className='discount_detail_dolar_main_container_two_dolar_head_heading'>{item.priceCurrent}</h2>
+                        <h2 className='discount_detail_dolar_main_container_two_dolar_head_heading'>{item.newPrice}</h2>
                         <p className='discount_detail_dolar_main_container_two_dolar_head_para previous-price'>{item.priceOld}</p>
                     </div>
 

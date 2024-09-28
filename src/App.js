@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import NavbarComponent from './components/Navbar/navbar';
 import NavbarComponentClass from './components/Navbar/navbarcontainer';
 import SliderComponent from './components/Slider/slider';
@@ -11,24 +12,30 @@ import PartnersComponents from './components/partners/partners';
 import FooterComponents from './components/Footer/footer';
 import TeamComponent from './components/Team/team';
 import DetailDiscountComponent from './components/Discounts_New_Hunt/detail_discount';
-import DetailPopularHuntComponent from './components/Popular_Hunt/popular_hunt_detail'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NewHuntDetailContainer from './components/New_Hunt/new_hunt_detail'
-import ContactUSContainer from './components/contactus/contactus'
+import DetailPopularHuntComponent from './components/Popular_Hunt/popular_hunt_detail';
+import NewHuntDetailContainer from './components/New_Hunt/new_hunt_detail';
+import ContactUSContainer from './components/contactus/contactus';
 import TermsAndConditionComponent from './components/terms_and_condition/terms_and_condition';
-import AboutUsContainer from './components/AboutUS/aboutus'
-import SponsorsContainer from './components/Sponsors/sponsors'
-import GalleryComponent from './components/Gallery/gallery'
-import VideoComponent from './components/Video/video'
+import AboutUsContainer from './components/AboutUS/aboutus';
+import SponsorsContainer from './components/Sponsors/sponsors';
+import GalleryComponent from './components/Gallery/gallery';
+import VideoComponent from './components/Video/video';
+import AdminComponentForm from './components/Admin/admin';
+import AdminDashboardComponent from './components/admin-dashboard/admin-dashboard';
 
+function MainContent() {
+  const location = useLocation();
 
-function App() {
   return (
-    <Router>
-      {/* The navbar and some shared components */}
-      <NavbarComponent />
-      <NavbarComponentClass />
-      
+    <>
+      {/* Conditionally render Navbar based on route */}
+      {location.pathname !== '/dashboard' && (
+        <>
+          <NavbarComponent />
+          <NavbarComponentClass />
+        </>
+      )}
+
       {/* Define routes for navigation */}
       <Routes>
         <Route 
@@ -57,8 +64,18 @@ function App() {
         <Route path="/aboutus" element={<AboutUsContainer />} />
         <Route path="/sponsors" element={<SponsorsContainer />} />
         <Route path="/gallery" element={<GalleryComponent />} />
-        <Route path='/video' element={<VideoComponent />} />
+        <Route path="/video" element={<VideoComponent />} />
+        <Route path="/admin-sigin" element={<AdminComponentForm />} />
+        <Route path="/dashboard" element={<AdminDashboardComponent />} />
       </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <MainContent />
     </Router>
   );
 }

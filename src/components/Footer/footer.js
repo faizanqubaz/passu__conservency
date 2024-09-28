@@ -15,6 +15,7 @@ const FooterComponent = () => {
                         </select>
                         <select className="footer-select">
                             <option value="ENG">ENG</option>
+                            <option value="URDU">URDU</option>
                             {/* Add more languages as options */}
                         </select>
                     </div>
@@ -24,10 +25,10 @@ const FooterComponent = () => {
                     <div className="footer-column">
                         <h4>BYH</h4>
                         <ul>
-                            <li><a href="/about">About us</a></li>
+                            <li><a href="/aboutus">About us</a></li>
                             <li><a href="/blog">Blog</a></li>
                             <li><a href="/mission">Our mission</a></li>
-                            <li><a href="/contact">Contact us</a></li>
+                            <li><a href="/contactus">Contact us</a></li>
                         </ul>
                     </div>
                     <div className="footer-column">

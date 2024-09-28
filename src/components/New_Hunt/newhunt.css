@@ -41,7 +41,6 @@
 .newhunt_main__image_container {
     display: flex;
     justify-content: space-between; /* Space out the 3 images */
-    height: 400px;
     transition: transform 0.8s ease; /* Smooth transition */
     transform: translateX(0); /* Default state for image container */
 }
@@ -59,6 +58,11 @@
     cursor: pointer;
     transition: transform 3s ease-in-out;
 }
+
+.newhunt_main__image_container_one:hover{
+    text-decoration: none;
+}
+
 .newhunt_main__image_container_one_image:hover {
     transform: scale(1.1); /* Slight zoom effect */
     opacity: 0.7; /* Slight transparency effect */
@@ -66,10 +70,10 @@
 
 .newhunt_main__image_container_one_image_paragraph {
     font-size: 16px;
-    text-align: center;
-    padding: 0px 2px;
+    /* text-align: center; */
+    padding: 0px 13px;
     letter-spacing: 2px;
-    word-spacing: 5px;
+    /* word-spacing: 5px; */
     margin-bottom: 0px;
     color: white;
 }
@@ -111,14 +115,18 @@
 
 .newhunt_main__arrow_right_hr {
     border: 0;
-    height: 2px; /* Thickness of the line */
+    height: 4px; /* Thickness of the line */
     background-color: #dbb127; /* Line color */
-    padding-top: 3px; /* Adjust the top margin as needed */
     margin-bottom: 20px; /* Add bottom margin for spacing */
     width: 100%; /* Full width */
     max-width: 80%; /* Optional: You can reduce the width if needed */
     margin-left: auto;
     margin-right: auto; /* Center the line */
+    margin-top: 15px;
+}
+
+.discount_main__arrow_right_hr_in_common{
+margin-top: 20px;
 }
 
 /* Responsive styles */

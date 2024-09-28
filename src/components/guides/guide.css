@@ -137,3 +137,11 @@
         font-size: 14px;
     }
 }
+
+
+
+.view-page-btn{
+    padding: 4px 7px;
+    font-family: 'Montserrat';
+    cursor: pointer;
+}

@@ -41,9 +41,11 @@
 .popular_main__image_container {
     display: flex;
     justify-content: space-between; /* Space out the 3 images */
-    height: 400px;
     transition: transform 0.8s ease; /* Smooth transition */
     transform: translateX(0); /* Default state for image container */
+}
+.popular_main__arrow_right_hr_common{
+    margin-top: 5px;
 }
 
 .popular_main__image_container_one {
@@ -60,7 +62,9 @@
     cursor: pointer;
     transition: transform 3s ease-in-out;
 }
-
+.popular_main__image_container_one:hover{
+    text-decoration: none;
+}
 .popular_main__image_container_one_image:hover {
     transform: scale(1.1); /* Slight zoom effect */
     opacity: 0.7; /* Slight transparency effect */
@@ -68,12 +72,13 @@
 
 .popular_main__image_container_one_image_paragraph {
     font-size: 16px;
-    text-align: center;
+    /* text-align: center; */
     letter-spacing: 2px;
     word-spacing: 5px;
-    margin-bottom: 0px;
+    margin-top: 13px;
+    /* margin-bottom: 0px; */
     color: white;
-    padding: 2px
+    padding: 1px 19px;
 }
 
 .popular_main__image_container_one_head{
@@ -114,14 +119,15 @@
 
 .popular_main__arrow_right_hr {
     border: 0;
-    height: 2px; /* Thickness of the line */
+    height: 5px; /* Thickness of the line */
     background-color: #dbb127; /* Line color */
-    padding-top: 3px; /* Adjust the top margin as needed */
+    padding-top: 1px; /* Adjust the top margin as needed */
     margin-bottom: 20px; /* Add bottom margin for spacing */
     width: 100%; /* Full width */
     max-width: 80%; /* Optional: You can reduce the width if needed */
     margin-left: auto;
     margin-right: auto; /* Center the line */
+    margin-top: 15px;
 }
 
 

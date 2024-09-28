@@ -52,6 +52,9 @@
     border: 1px solid black;
     text-decoration: none;
 }
+.discount_main__image_container_one:hover{
+    text-decoration: none;
+}
 
 .discount_main__image_container_one_image {
     width: 100%;
@@ -63,34 +66,46 @@
     opacity: 0.7; /* Slight transparency effect */
 }
 .discount_main__image_container_one_image_paragraph {
+ 
     font-size: 16px;
-    text-align: center;
-    letter-spacing: 2px;
-    word-spacing: 5px;
-    margin-bottom: 0px;
+    font-weight: 900;
+    word-spacing: 3px;
+    margin-bottom: 3px;
+    margin-top: 13px;
     color: white;
-    padding: 2px;
+    padding: 2px 27px;
     font-family: "Roboto", sans-serif;
 }
 
 .discount_main__image_container_one_head {
-    letter-spacing: 2px;
-    padding-left: 40px;
-    font-size: 18px;
-    word-spacing: 4px;
-    font-family: "Roboto", sans-serif;
-    color: white;
+       /* letter-spacing: 2px; */
+       font-size: -1px;
+       padding: 1px 26px;
+       /* padding-left: 40px; */
+       font-size: 18px;
+       word-spacing: 4px;
+       font-family: "Roboto", sans-serif;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+}
+.discount_main__image_container_one_image_paragraph_main_para_fsome{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
 }
 
 .discount_main__image_container_two_head {
-    display: flex;
-    justify-content: space-around;
-    color: white;
+  
+    /* max-width: 187px; */
     font-family: "Roboto", sans-serif;
-    width: 78%;
-    margin-left: 36px;
-    align-items: center;
+    width: 100%;
+    margin-left: 22px;
+    overflow: hidden;
+    color: white;
 }
+/* // Google Maps API key - replace with your actual API key
+const apiKey = 'AIzaSyC6xvlbMFrLYt9ExmJvyFnd5pawC_Al4rs'; */
 
 .discount_main__arrow_left, .discount_main__arrow_right {
     position: absolute;
@@ -111,9 +126,8 @@
 
 .discount_main__arrow_right_hr {
     border: 0;
-    height: 2px; /* Thickness of the line */
+    height: 5px; /* Thickness of the line */
     background-color: #dbb127; /* Line color */
-    padding-top: 3px; /* Adjust the top margin as needed */
     margin-bottom: 20px; /* Add bottom margin for spacing */
     width: 100%; /* Full width */
     max-width: 80%; /* Optional: You can reduce the width if needed */
@@ -121,6 +135,19 @@
     margin-right: auto; /* Center the line */
 }
 
+.discount_main__arrow_right_hr_in_common{
+    margin-top: 20px;
+}
+
+.discount_main__image_container_one_image_paragraph_main_para{
+    display: block;
+    margin: 0 110px 4px 0;
+    font-size: 12px;
+    color: #dbb127;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
 /* Media Queries for responsiveness */
 

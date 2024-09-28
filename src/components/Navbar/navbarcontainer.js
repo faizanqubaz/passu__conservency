@@ -138,8 +138,8 @@ const NavbarContainer = () => {
                 <li>About Us</li>
               </Link>
 
-
-              <li>Blog</li>
+{/* 
+              <li>Blog</li> */}
 
 
 
@@ -186,6 +186,10 @@ const NavbarContainer = () => {
 
               <Link className='navbar_container_contactus_style' to={'/contactus'}>
                 <li>Contact Us</li>
+              </Link>
+
+              <Link className='navbar_container_contactus_style' to={'/admin-sigin'}>
+                <li>Admin</li>
               </Link>
             </ul>
           </div>
