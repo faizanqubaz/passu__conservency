@@ -1,5 +1,4 @@
 .partner_slider {
-    height: 400px;
     background: rgba(0, 0, 0, 0.1);
     overflow: hidden;  /* To hide the extra images */
 }
@@ -15,9 +14,9 @@
 .partner_slider_content_head {
     display: flex;
     justify-content: space-between;
-    width: 20%;
+    width: 19%; /* Full width for heading section */
     align-items: center;
-    margin-top: 54px;
+    margin-top: 20px;
     margin-bottom: 12px;
 }
 
@@ -42,6 +41,8 @@
 }
 
 /* Media Queries */
+
+/* Large screens (laptops/desktops) */
 @media (max-width: 1200px) {
     .partner_slider_content_head_heading {
         font-size: 28px; /* Adjust font size for medium screens */
@@ -57,6 +58,7 @@
     }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
     .partner_slider_content_head_heading {
         font-size: 20px; /* Further reduce font size for tablets */
@@ -65,18 +67,19 @@
         flex-wrap: wrap; /* Allow wrapping of images on tablets */
     }
     .partner_slider_content_icons_image {
-        width: 50%; /* Adjust width for tablets */
+        width: 48%; /* Adjust width for tablets */
         margin-right: 0; /* Remove right margin for better wrapping */
         margin-bottom: 10px; /* Add bottom margin for spacing */
     }
 }
 
+/* Mobile Devices */
 @media (max-width: 576px) {
     .partner_slider_content_head_heading {
-        font-size: 16px; /* Further reduce font size for mobile screens */
+        font-size: 18px; /* Further reduce font size for smaller screens */
     }
     .partner_slider_content_icons_image {
-        width: 100%; /* Make images take full width on mobile screens */
-        margin-bottom: 10px; /* Add bottom margin for spacing */
+        width: 100%; /* Full width for images on mobile devices */
+        margin-bottom: 10px; /* Spacing between images */
     }
 }

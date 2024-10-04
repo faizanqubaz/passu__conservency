@@ -11,14 +11,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 
 const Partners = () => {
-  const [slideIndex, setSlideIndex] = useState(0); // Current slide index
+  const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setSlideIndex((prevIndex) => (prevIndex + 1) % 6);  // 6 is the number of logos
-    }, 2000); // Slide every 2 seconds
+      setSlideIndex((prevIndex) => (prevIndex + 1) % 7); // Adjusted for 7 logos
+    }, 2000);
 
-    return () => clearInterval(intervalId);  // Cleanup interval on component unmount
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);
 
   return (

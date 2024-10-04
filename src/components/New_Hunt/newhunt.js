@@ -13,7 +13,7 @@ const NewHunt = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/v2/ibex?hunttype=newhunttype`);
+        const response = await axios.get(`https://zakhari-a63a222c7c96.herokuapp.com/api/v2/ibex?hunttype=newhunttype`);
         setDiscountData(response.data.data);
       } catch (error) {
         console.error('Error fetching discount data:', error);

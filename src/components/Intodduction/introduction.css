@@ -1,65 +1,62 @@
 .introduction_main_slider {
-    max-width: 1309px;
-    margin: auto;
-    padding: 24px 11px;
-  }
-  
-  .introduction_slider_heading_head {
-    text-align: center;
-  }
-  
-  .introduction_slider_heading {
-    font-family: "Roboto", sans-serif;
-    color: #95723f;
-    font-weight: 600;
-    word-spacing: 4px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .introduction_slider_para_image_slider {
-    padding: 27px 9px;
-  }
-  
-  .introduction_slider_paragraph {
-    font-size: 18px;
-    margin-top: 0;
-    width: 51%;
-    color: #000000;
-    font-family: 'Droid Serif', 'Helvetica Neue', Arial, Helvetica, Verdana, sans-serif;
-    line-height: 1.8; /* Increases the space between lines */
-    margin-bottom: 15px;
-  }
-  
-  .introduction_slider_para_image {
-    width: 47%;
-    transition: transform 3s ease-in-out; /* Smooth transition */
+  max-width: 1309px;
+  margin: auto;
+  padding: 24px 11px;
+}
 
-  }
-  
-  .introduction_slider_para_image:hover {
-    transform: scale(1.1); /* Zooms the image */
-    filter: brightness(0.7); /* Darkens the image */
-  }
-  
-  .introduction_slider_para_image_slider_first {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .introduction_slider_para_image_slider_second {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 56px;
-  }
-  .in-view .introduction_slider_para_image,
+/* General Styling */
+.introduction_slider_heading_head {
+  text-align: center;
+}
+
+.introduction_slider_heading {
+  font-family: "Roboto", sans-serif;
+  color: #95723f;
+  font-weight: 600;
+  word-spacing: 4px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.introduction_slider_para_image_slider {
+  padding: 27px 9px;
+}
+
+.introduction_slider_paragraph {
+  font-size: 18px;
+  margin-top: 0;
+  width: 51%;
+  color: #000000;
+  font-family: 'Droid Serif', 'Helvetica Neue', Arial, Helvetica, Verdana, sans-serif;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.introduction_slider_para_image {
+  width: 47%;
+  transition: transform 3s ease-in-out;
+}
+
+.introduction_slider_para_image:hover {
+  transform: scale(1.1);
+  filter: brightness(0.7);
+}
+
+.introduction_slider_para_image_slider_first,
+.introduction_slider_para_image_slider_second {
+  display: flex;
+  justify-content: space-between;
+}
+
+.introduction_slider_para_image_slider_second {
+  margin-top: 56px;
+}
+
+/* Intersection Observer Transition */
+.in-view .introduction_slider_para_image,
 .in-view .introduction_slider_paragraph {
   opacity: 1;
-  transform: translateX(0); /* Move to original position */
-  height: 460px;
-  opacity: 1;
   transform: translateX(0);
-  height: 460px;
   word-spacing: 7px;
   line-height: 32px;
 }
@@ -67,10 +64,9 @@
 .introduction_slider_para_image,
 .introduction_slider_paragraph {
   opacity: 0;
-  transform: translateX(100px); /* Default position to right for paragraph */
-  transition: transform 3s ease-in-out; /* Smooth transition */
+  transform: translateX(100px);
+  transition: transform 3s ease-in-out;
 }
-
 
 /* RESPONSIVENESS */
 
@@ -82,24 +78,23 @@
 
   .introduction_slider_paragraph {
     font-size: 14px;
-    width: 100%; /* Full width for paragraphs on small devices */
-    
+    width: 100%;
   }
 
   .introduction_slider_para_image {
-    width: 100%; /* Full width for images on small devices */
-    transform: translateX(0); /* No translate on small screens */
+    width: 100%;
   }
 
   .introduction_slider_para_image_slider_first,
   .introduction_slider_para_image_slider_second {
-    flex-direction: column; /* Stack vertically */
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center; /* Center-align text */
+    text-align: center;
   }
 
   .introduction_slider_para_image {
-    margin-bottom: 20px; /* Add some space between image and text */
+    margin-bottom: 20px; /* Ensure there's space between the image and text */
   }
 }
 
@@ -111,12 +106,12 @@
 
   .introduction_slider_paragraph {
     font-size: 16px;
-    width: 90%; /* Paragraph takes up more width */
+    width: 90%;
     line-height: 1.6;
   }
 
   .introduction_slider_para_image {
-    width: 90%; /* Reduce image width slightly */
+    width: 90%;
     margin-bottom: 20px;
   }
 
@@ -141,13 +136,13 @@
   }
 
   .introduction_slider_para_image {
-    width: 65%; /* Slightly smaller images for laptops */
+    width: 65%;
     margin-bottom: 20px;
   }
 
   .introduction_slider_para_image_slider_first,
   .introduction_slider_para_image_slider_second {
-    flex-direction: row; /* Horizontal layout for larger screens */
+    flex-direction: column;
     justify-content: space-between;
   }
 }
