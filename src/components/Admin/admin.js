@@ -21,7 +21,7 @@ const LoginComponent = () => {
     setSuccessMessage(''); // Reset success message
 
     try {
-      const response = await axios.post('http://localhost:4000/api/v2/login', {
+      const response = await axios.post('https://zakhari-a63a222c7c96.herokuapp.com/api/v2/login', {
         email,
         password,
       });

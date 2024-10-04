@@ -29,7 +29,7 @@ const ContactUs = () => {
     e.preventDefault(); // Prevent the default form submission
 
     try {
-      const response = await axios.post('http://localhost:4000/api/v2/ibex/contactus', formData); // Call your API endpoint
+      const response = await axios.post('https://zakhari-a63a222c7c96.herokuapp.com/api/v2//ibex/contactus', formData); // Call your API endpoint
       if (response.status === 200) {
         setSubmissionStatus('Your message has been sent successfully!');
         setFormData({ name: '', phone: '', email: '', country: '', subject: '', message: '' }); // Reset form
