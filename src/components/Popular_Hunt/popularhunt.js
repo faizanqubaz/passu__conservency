@@ -14,12 +14,13 @@ const PopularHunt = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`https://zakhari-a63a222c7c96.herokuapp.com/api/v2/ibex?hunttype=populartype`);
+        console.log(response.data.data);  // Check the image URLs in the response
         setDiscountData(response.data.data);
       } catch (error) {
         console.error('Error fetching discount data:', error);
       }
     };
-
+  
     fetchData();
   }, []);
 
