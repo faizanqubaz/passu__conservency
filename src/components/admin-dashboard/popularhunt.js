@@ -96,7 +96,7 @@ const AdminPortor = () => {
         }
     
         try {
-            const response = await axios.post('https://zakhari-a63a222c7c96.herokuapp.com/api/v2/ibex/popular', formData);
+            const response = await axios.post('http://localhost:5000/api/v2/ibex/popular', formData);
             console.log('Hunt added:', response.data);
             console.log('Hunt added:', response.data);
             setLoading(false); // Hide spinner
