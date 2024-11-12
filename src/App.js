@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import NavbarComponent from './components/Navbar/navbar';
+import { Helmet } from 'react-helmet'
 import NavbarComponentClass from './components/Navbar/navbarcontainer';
 import SliderComponent from './components/Slider/slider';
 import IntroductionComponent from './components/Intodduction/introduction';
@@ -74,9 +75,16 @@ function MainContent() {
 
 function App() {
   return (
-    <Router>
+    <>
+  <Router>
       <MainContent />
     </Router>
+    <Helmet>
+    <meta name="google-site-verification" content="90IHVEH5oGbjRplp10PygNPJxoz_QixrK6oUN-yjsfw" />
+    </Helmet>
+    </>
+  
+  
   );
 }
 

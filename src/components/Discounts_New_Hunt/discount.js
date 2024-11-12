@@ -2,12 +2,14 @@ import './discount.css';
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesLeft, faAnglesRight, faStar, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Discount = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [discountData, setDiscountData] = useState([]);
+  const [isSigningIn, setIsSigningIn] = useState(false);
+  const navigate = useNavigate();
 
   // Fetch data from API on component mount
   useEffect(() => {
@@ -31,6 +33,25 @@ const Discount = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? discountData.length - 1 : prevIndex - 1
     );
+  };
+
+  const handleSignInAndRedirect = async (item) => {
+    setIsSigningIn(true);
+    try {
+      // Call the backend API to initiate Google sign-in
+      const response = await axios.get(`http://localhost:5000/auth/google`);
+      if (response.data.success) {
+        // On successful sign-in, navigate to the detail page
+        navigate(`/discount/${item._id}`, { state: { item } });
+      } else {
+        alert('Sign-in failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error during sign-in:', error);
+      alert('An error occurred during sign-in. Please try again.');
+    } finally {
+      setIsSigningIn(false);
+    }
   };
 
   // If data is not yet loaded, return a loading indicator
@@ -68,11 +89,11 @@ const Discount = () => {
 
         <div className='discount_main__image_container'>
           {visibleImages.map((item) => (
-            <Link 
+            <div 
               key={item.id} 
-              to={`/discount/${item._id}`} 
-              state={{ item }} 
+              onClick={() => handleSignInAndRedirect(item)} 
               className='discount_main__image_container_one'
+              style={{ cursor: 'pointer' }}
             >
               <img 
                 className='discount_main__image_container_one_image' 
@@ -98,7 +119,7 @@ const Discount = () => {
                 </div>
                 <p style={{ fontSize: '14px', textTransform: 'capitalize' }}>between 1 - 31 march 2024</p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
